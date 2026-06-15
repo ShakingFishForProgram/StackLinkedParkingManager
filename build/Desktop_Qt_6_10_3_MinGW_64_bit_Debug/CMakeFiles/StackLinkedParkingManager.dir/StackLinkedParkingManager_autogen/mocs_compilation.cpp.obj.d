@@ -1,7 +1,7 @@
 CMakeFiles/StackLinkedParkingManager.dir/StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj: \
  D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\StackLinkedParkingManager_autogen\mocs_compilation.cpp \
- D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\StackLinkedParkingManager_autogen\EWIEGA46WW/moc_mainwindow.cpp \
- D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.h \
+ D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\StackLinkedParkingManager_autogen\UVLADIE3JM/moc_mainwindow.cpp \
+ D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.h \
  D:/Qt/6.10.3/mingw_64/include/QtWidgets/QMainWindow \
  D:/Qt/6.10.3/mingw_64/include/QtWidgets/qmainwindow.h \
  D:/Qt/6.10.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

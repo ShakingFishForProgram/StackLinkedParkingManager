@@ -393,21 +393,9 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/Car.h",
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.h",
 			"MU",
-			"EWIEGA46WW/moc_Car.cpp",
-			null
-		],
-		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/DualStack.h",
-			"MU",
-			"EWIEGA46WW/moc_DualStack.cpp",
-			null
-		],
-		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"UVLADIE3JM/moc_mainwindow.cpp",
 			null
 		]
 	],
@@ -438,6 +426,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include",
 		"D:/Qt/6.10.3/mingw_64/include/QtCore",
 		"D:/Qt/6.10.3/mingw_64/include",
 		"D:/Qt/6.10.3/mingw_64/mkspecs/win32-g++",
@@ -486,17 +475,12 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/main.cpp",
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/main.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp",
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.cpp",
 			"MU",
 			null
 		]

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp" "CMakeFiles/testCar.dir/testCar.cpp.obj" "gcc" "CMakeFiles/testCar.dir/testCar.cpp.obj.d"
+  "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testCar.cpp" "CMakeFiles/testCar.dir/test/testCar.cpp.obj" "gcc" "CMakeFiles/testCar.dir/test/testCar.cpp.obj.d"
   "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/mocs_compilation.cpp" "CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.obj.d"
   )
 

@@ -95,56 +95,41 @@ CMakeFiles/StackLinkedParkingManager.dir/StackLinkedParkingManager_autogen/mocs_
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/StackLinkedParkingManager_autogen/mocs_compilation.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\StackLinkedParkingManager_autogen\mocs_compilation.cpp -o CMakeFiles\StackLinkedParkingManager.dir\StackLinkedParkingManager_autogen\mocs_compilation.cpp.s
 
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/main.cpp
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\main.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\main.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\main.cpp
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/main.cpp
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\src\main.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\src\main.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\main.cpp
 
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/StackLinkedParkingManager.dir/main.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\main.cpp > CMakeFiles\StackLinkedParkingManager.dir\main.cpp.i
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\main.cpp > CMakeFiles\StackLinkedParkingManager.dir\src\main.cpp.i
 
-CMakeFiles/StackLinkedParkingManager.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/main.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\main.cpp -o CMakeFiles\StackLinkedParkingManager.dir\main.cpp.s
+CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\main.cpp -o CMakeFiles\StackLinkedParkingManager.dir\src\main.cpp.s
 
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.cpp
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\mainwindow.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\mainwindow.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\mainwindow.cpp
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.cpp
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\src\mainwindow.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\src\mainwindow.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\mainwindow.cpp
 
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\mainwindow.cpp > CMakeFiles\StackLinkedParkingManager.dir\mainwindow.cpp.i
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\mainwindow.cpp > CMakeFiles\StackLinkedParkingManager.dir\src\mainwindow.cpp.i
 
-CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\mainwindow.cpp -o CMakeFiles\StackLinkedParkingManager.dir\mainwindow.cpp.s
-
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\testCar.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\testCar.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp
-
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp > CMakeFiles\StackLinkedParkingManager.dir\testCar.cpp.i
-
-CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp -o CMakeFiles\StackLinkedParkingManager.dir\testCar.cpp.s
+CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\src\mainwindow.cpp -o CMakeFiles\StackLinkedParkingManager.dir\src\mainwindow.cpp.s
 
 CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/flags.make
 CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/includes_CXX.rsp
 CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj: .qt/rcc/qrc_StackLinkedParkingManager_translations.cpp
 CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj: CMakeFiles/StackLinkedParkingManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj -MF CMakeFiles\StackLinkedParkingManager.dir\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\.qt\rcc\qrc_StackLinkedParkingManager_translations.cpp.obj.d -o CMakeFiles\StackLinkedParkingManager.dir\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\.qt\rcc\qrc_StackLinkedParkingManager_translations.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\.qt\rcc\qrc_StackLinkedParkingManager_translations.cpp
 
 CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.i: cmake_force
@@ -158,18 +143,16 @@ CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_De
 # Object files for target StackLinkedParkingManager
 StackLinkedParkingManager_OBJECTS = \
 "CMakeFiles/StackLinkedParkingManager.dir/StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj" \
-"CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj" \
-"CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj" \
-"CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj" \
+"CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj" \
+"CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj" \
 "CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj"
 
 # External object files for target StackLinkedParkingManager
 StackLinkedParkingManager_EXTERNAL_OBJECTS =
 
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj
-StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj
-StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj
-StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj
+StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj
+StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.obj
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/build.make
 StackLinkedParkingManager.exe: D:/Qt/6.10.3/mingw_64/lib/libQt6Widgets.a
@@ -179,7 +162,7 @@ StackLinkedParkingManager.exe: D:/Qt/6.10.3/mingw_64/lib/libQt6EntryPoint.a
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/linkLibs.rsp
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/objects1.rsp
 StackLinkedParkingManager.exe: CMakeFiles/StackLinkedParkingManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable StackLinkedParkingManager.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable StackLinkedParkingManager.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\StackLinkedParkingManager.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

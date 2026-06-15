@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testCar_autogen"
-  "testCar_autogen/include/ui_mainwindow.h"
+  "testCar_autogen/include/src/ui_mainwindow.h"
   "testCar_autogen/mocs_compilation.cpp"
   "testCar_autogen/timestamp"
 )

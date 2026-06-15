@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/StackLinkedParkingManager_autogen"
-  "StackLinkedParkingManager_autogen/include/ui_mainwindow.h"
+  "StackLinkedParkingManager_autogen/include/src/ui_mainwindow.h"
   "StackLinkedParkingManager_autogen/mocs_compilation.cpp"
   "StackLinkedParkingManager_autogen/timestamp"
 )

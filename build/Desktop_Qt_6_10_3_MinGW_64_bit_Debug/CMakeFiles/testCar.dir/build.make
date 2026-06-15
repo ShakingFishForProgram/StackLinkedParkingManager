@@ -83,31 +83,31 @@ CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\testCar_autogen\mocs_compilation.cpp -o CMakeFiles\testCar.dir\testCar_autogen\mocs_compilation.cpp.s
 
-CMakeFiles/testCar.dir/testCar.cpp.obj: CMakeFiles/testCar.dir/flags.make
-CMakeFiles/testCar.dir/testCar.cpp.obj: CMakeFiles/testCar.dir/includes_CXX.rsp
-CMakeFiles/testCar.dir/testCar.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp
-CMakeFiles/testCar.dir/testCar.cpp.obj: CMakeFiles/testCar.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testCar.dir/testCar.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testCar.dir/testCar.cpp.obj -MF CMakeFiles\testCar.dir\testCar.cpp.obj.d -o CMakeFiles\testCar.dir\testCar.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp
+CMakeFiles/testCar.dir/test/testCar.cpp.obj: CMakeFiles/testCar.dir/flags.make
+CMakeFiles/testCar.dir/test/testCar.cpp.obj: CMakeFiles/testCar.dir/includes_CXX.rsp
+CMakeFiles/testCar.dir/test/testCar.cpp.obj: D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testCar.cpp
+CMakeFiles/testCar.dir/test/testCar.cpp.obj: CMakeFiles/testCar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\build\Desktop_Qt_6_10_3_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testCar.dir/test/testCar.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testCar.dir/test/testCar.cpp.obj -MF CMakeFiles\testCar.dir\test\testCar.cpp.obj.d -o CMakeFiles\testCar.dir\test\testCar.cpp.obj -c D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\test\testCar.cpp
 
-CMakeFiles/testCar.dir/testCar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testCar.dir/testCar.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp > CMakeFiles\testCar.dir\testCar.cpp.i
+CMakeFiles/testCar.dir/test/testCar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testCar.dir/test/testCar.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\test\testCar.cpp > CMakeFiles\testCar.dir\test\testCar.cpp.i
 
-CMakeFiles/testCar.dir/testCar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testCar.dir/testCar.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\testCar.cpp -o CMakeFiles\testCar.dir\testCar.cpp.s
+CMakeFiles/testCar.dir/test/testCar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testCar.dir/test/testCar.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MainFiles\STUDY\PROJECT\StackLinkedParkingManager\test\testCar.cpp -o CMakeFiles\testCar.dir\test\testCar.cpp.s
 
 # Object files for target testCar
 testCar_OBJECTS = \
 "CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.obj" \
-"CMakeFiles/testCar.dir/testCar.cpp.obj"
+"CMakeFiles/testCar.dir/test/testCar.cpp.obj"
 
 # External object files for target testCar
 testCar_EXTERNAL_OBJECTS =
 
 testCar.exe: CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.obj
-testCar.exe: CMakeFiles/testCar.dir/testCar.cpp.obj
+testCar.exe: CMakeFiles/testCar.dir/test/testCar.cpp.obj
 testCar.exe: CMakeFiles/testCar.dir/build.make
 testCar.exe: CMakeFiles/testCar.dir/linkLibs.rsp
 testCar.exe: CMakeFiles/testCar.dir/objects1.rsp

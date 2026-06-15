@@ -1,13 +1,13 @@
 testCar_autogen/timestamp: \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/CMakeLists.txt \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/Car.h \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/package-manager.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/qtcreator-project.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include/Car.h \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testCar.cpp \
 	D:/Qt/6.10.3/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake \
 	D:/Qt/6.10.3/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake \
 	D:/Qt/6.10.3/mingw_64/lib/cmake/Qt6/Qt6Config.cmake \

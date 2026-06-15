@@ -7,13 +7,10 @@ qt_standard_project_setup()
 
 qt_add_executable(StackLinkedParkingManager
     WIN32 MACOSX_BUNDLE
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    Car.h
-    testCar.cpp
-    DualStack.h
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/mainwindow.ui
 )
 
 qt_add_translations(
@@ -26,6 +23,8 @@ target_link_libraries(StackLinkedParkingManager
         Qt::Core
         Qt::Widgets
 )
+
+target_include_directories(StackLinkedParkingManager PRIVATE include)
 
 install(TARGETS StackLinkedParkingManager
     BUNDLE  DESTINATION .
@@ -41,6 +40,32 @@ qt_generate_deploy_app_script(
 install(SCRIPT ${deploy_script})
 
 add_executable(testCar
-    testCar.cpp
-    Car.h
+    test/testCar.cpp
+    include/Car.h
 )
+
+target_include_directories(testCar PRIVATE include)
+
+add_executable(testDualStack
+    test/testDualStack.cpp
+    include/DualStack.h
+    include/ParkingDualStack.h
+)
+
+target_include_directories(testDualStack PRIVATE include)
+
+add_executable(testParkingDualStack
+    test/testParkingDualStack.cpp
+    include/ParkingDualStack.h
+    include/DualStack.h
+    include/Car.h
+)
+
+target_include_directories(testParkingDualStack PRIVATE include)
+
+add_executable(testDoublyLinkedList
+    test/testDoublyLinkedList.cpp
+    include/DoublyLinkedList.h
+)
+
+target_include_directories(testDoublyLinkedList PRIVATE include)

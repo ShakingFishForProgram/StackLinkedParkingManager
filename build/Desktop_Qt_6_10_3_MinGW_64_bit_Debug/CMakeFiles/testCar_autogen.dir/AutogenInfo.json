@@ -393,9 +393,9 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/Car.h",
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include/Car.h",
 			"MU",
-			"EWIEGA46WW/moc_Car.cpp",
+			"6YEA5652QU/moc_Car.cpp",
 			null
 		]
 	],
@@ -412,6 +412,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -443,7 +444,7 @@
 	"MOC_SKIP" : 
 	[
 		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp",
-		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include/ui_mainwindow.h",
+		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include/src/ui_mainwindow.h",
 		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/mocs_compilation.cpp"
 	],
 	"MULTI_CONFIG" : false,
@@ -457,7 +458,7 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp",
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testCar.cpp",
 			"MU",
 			null
 		]
@@ -467,7 +468,7 @@
 	"UIC_SKIP" : 
 	[
 		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp",
-		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include/ui_mainwindow.h",
+		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include/src/ui_mainwindow.h",
 		"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/mocs_compilation.cpp"
 	],
 	"UIC_UI_FILES" : [],

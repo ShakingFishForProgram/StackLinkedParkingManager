@@ -1,6 +1,5 @@
 StackLinkedParkingManager_autogen/timestamp: \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/CMakeLists.txt \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/Car.h \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/package-manager.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/qtcreator-project.cmake \
@@ -8,10 +7,9 @@ StackLinkedParkingManager_autogen/timestamp: \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/moc_predefs.h \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/main.cpp \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.cpp \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.h \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/testCar.cpp \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/main.cpp \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.cpp \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.h \
 	D:/Qt/6.10.3/mingw_64/include/QtCore/q17memory.h \
 	D:/Qt/6.10.3/mingw_64/include/QtCore/q20functional.h \
 	D:/Qt/6.10.3/mingw_64/include/QtCore/q20iterator.h \
@@ -582,5 +580,5 @@ StackLinkedParkingManager_autogen/timestamp: \
 	D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
 	D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/mainwindow.ui \
+	D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/src/mainwindow.ui \
 	D:/Qt/Tools/CMake_64/bin/cmake.exe

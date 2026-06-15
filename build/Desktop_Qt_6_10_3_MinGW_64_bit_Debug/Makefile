@@ -187,6 +187,45 @@ testCar/fast:
 .PHONY : testCar/fast
 
 #=============================================================================
+# Target rules for targets named testDualStack
+
+# Build rule for target.
+testDualStack: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDualStack
+.PHONY : testDualStack
+
+# fast build rule for target.
+testDualStack/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/build
+.PHONY : testDualStack/fast
+
+#=============================================================================
+# Target rules for targets named testParkingDualStack
+
+# Build rule for target.
+testParkingDualStack: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingDualStack
+.PHONY : testParkingDualStack
+
+# fast build rule for target.
+testParkingDualStack/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/build
+.PHONY : testParkingDualStack/fast
+
+#=============================================================================
+# Target rules for targets named testDoublyLinkedList
+
+# Build rule for target.
+testDoublyLinkedList: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedList
+.PHONY : testDoublyLinkedList
+
+# fast build rule for target.
+testDoublyLinkedList/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/build
+.PHONY : testDoublyLinkedList/fast
+
+#=============================================================================
 # Target rules for targets named StackLinkedParkingManager_lupdate
 
 # Build rule for target.
@@ -290,6 +329,84 @@ testCar_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar_autogen.dir\build.make CMakeFiles/testCar_autogen.dir/build
 .PHONY : testCar_autogen/fast
 
+#=============================================================================
+# Target rules for targets named testDualStack_autogen_timestamp_deps
+
+# Build rule for target.
+testDualStack_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDualStack_autogen_timestamp_deps
+.PHONY : testDualStack_autogen_timestamp_deps
+
+# fast build rule for target.
+testDualStack_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack_autogen_timestamp_deps.dir\build.make CMakeFiles/testDualStack_autogen_timestamp_deps.dir/build
+.PHONY : testDualStack_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named testDualStack_autogen
+
+# Build rule for target.
+testDualStack_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDualStack_autogen
+.PHONY : testDualStack_autogen
+
+# fast build rule for target.
+testDualStack_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack_autogen.dir\build.make CMakeFiles/testDualStack_autogen.dir/build
+.PHONY : testDualStack_autogen/fast
+
+#=============================================================================
+# Target rules for targets named testParkingDualStack_autogen_timestamp_deps
+
+# Build rule for target.
+testParkingDualStack_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingDualStack_autogen_timestamp_deps
+.PHONY : testParkingDualStack_autogen_timestamp_deps
+
+# fast build rule for target.
+testParkingDualStack_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack_autogen_timestamp_deps.dir\build.make CMakeFiles/testParkingDualStack_autogen_timestamp_deps.dir/build
+.PHONY : testParkingDualStack_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named testParkingDualStack_autogen
+
+# Build rule for target.
+testParkingDualStack_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingDualStack_autogen
+.PHONY : testParkingDualStack_autogen
+
+# fast build rule for target.
+testParkingDualStack_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack_autogen.dir\build.make CMakeFiles/testParkingDualStack_autogen.dir/build
+.PHONY : testParkingDualStack_autogen/fast
+
+#=============================================================================
+# Target rules for targets named testDoublyLinkedList_autogen_timestamp_deps
+
+# Build rule for target.
+testDoublyLinkedList_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedList_autogen_timestamp_deps
+.PHONY : testDoublyLinkedList_autogen_timestamp_deps
+
+# fast build rule for target.
+testDoublyLinkedList_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList_autogen_timestamp_deps.dir\build.make CMakeFiles/testDoublyLinkedList_autogen_timestamp_deps.dir/build
+.PHONY : testDoublyLinkedList_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named testDoublyLinkedList_autogen
+
+# Build rule for target.
+testDoublyLinkedList_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedList_autogen
+.PHONY : testDoublyLinkedList_autogen
+
+# fast build rule for target.
+testDoublyLinkedList_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList_autogen.dir\build.make CMakeFiles/testDoublyLinkedList_autogen.dir/build
+.PHONY : testDoublyLinkedList_autogen/fast
+
 StackLinkedParkingManager_autogen/mocs_compilation.obj: StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj
 .PHONY : StackLinkedParkingManager_autogen/mocs_compilation.obj
 
@@ -338,80 +455,125 @@ build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.s
 .PHONY : build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
-mainwindow.obj: mainwindow.cpp.obj
-.PHONY : mainwindow.obj
+src/mainwindow.obj: src/mainwindow.cpp.obj
+.PHONY : src/mainwindow.obj
 
 # target to build an object file
-mainwindow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.obj
-.PHONY : mainwindow.cpp.obj
+src/mainwindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.obj
+.PHONY : src/mainwindow.cpp.obj
 
-mainwindow.i: mainwindow.cpp.i
-.PHONY : mainwindow.i
+src/mainwindow.i: src/mainwindow.cpp.i
+.PHONY : src/mainwindow.i
 
 # target to preprocess a source file
-mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.i
-.PHONY : mainwindow.cpp.i
+src/mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.i
+.PHONY : src/mainwindow.cpp.i
 
-mainwindow.s: mainwindow.cpp.s
-.PHONY : mainwindow.s
+src/mainwindow.s: src/mainwindow.cpp.s
+.PHONY : src/mainwindow.s
 
 # target to generate assembly for a file
-mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/mainwindow.cpp.s
-.PHONY : mainwindow.cpp.s
+src/mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/src/mainwindow.cpp.s
+.PHONY : src/mainwindow.cpp.s
 
-testCar.obj: testCar.cpp.obj
-.PHONY : testCar.obj
+test/testCar.obj: test/testCar.cpp.obj
+.PHONY : test/testCar.obj
 
 # target to build an object file
-testCar.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/testCar.cpp.obj
-.PHONY : testCar.cpp.obj
+test/testCar.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/test/testCar.cpp.obj
+.PHONY : test/testCar.cpp.obj
 
-testCar.i: testCar.cpp.i
-.PHONY : testCar.i
+test/testCar.i: test/testCar.cpp.i
+.PHONY : test/testCar.i
 
 # target to preprocess a source file
-testCar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/testCar.cpp.i
-.PHONY : testCar.cpp.i
+test/testCar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/test/testCar.cpp.i
+.PHONY : test/testCar.cpp.i
 
-testCar.s: testCar.cpp.s
-.PHONY : testCar.s
+test/testCar.s: test/testCar.cpp.s
+.PHONY : test/testCar.s
 
 # target to generate assembly for a file
-testCar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\StackLinkedParkingManager.dir\build.make CMakeFiles/StackLinkedParkingManager.dir/testCar.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/testCar.cpp.s
-.PHONY : testCar.cpp.s
+test/testCar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/test/testCar.cpp.s
+.PHONY : test/testCar.cpp.s
+
+test/testDualStack.obj: test/testDualStack.cpp.obj
+.PHONY : test/testDualStack.obj
+
+# target to build an object file
+test/testDualStack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/test/testDualStack.cpp.obj
+.PHONY : test/testDualStack.cpp.obj
+
+test/testDualStack.i: test/testDualStack.cpp.i
+.PHONY : test/testDualStack.i
+
+# target to preprocess a source file
+test/testDualStack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/test/testDualStack.cpp.i
+.PHONY : test/testDualStack.cpp.i
+
+test/testDualStack.s: test/testDualStack.cpp.s
+.PHONY : test/testDualStack.s
+
+# target to generate assembly for a file
+test/testDualStack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/test/testDualStack.cpp.s
+.PHONY : test/testDualStack.cpp.s
+
+test/testParkingDualStack.obj: test/testParkingDualStack.cpp.obj
+.PHONY : test/testParkingDualStack.obj
+
+# target to build an object file
+test/testParkingDualStack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/test/testParkingDualStack.cpp.obj
+.PHONY : test/testParkingDualStack.cpp.obj
+
+test/testParkingDualStack.i: test/testParkingDualStack.cpp.i
+.PHONY : test/testParkingDualStack.i
+
+# target to preprocess a source file
+test/testParkingDualStack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/test/testParkingDualStack.cpp.i
+.PHONY : test/testParkingDualStack.cpp.i
+
+test/testParkingDualStack.s: test/testParkingDualStack.cpp.s
+.PHONY : test/testParkingDualStack.s
+
+# target to generate assembly for a file
+test/testParkingDualStack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/test/testParkingDualStack.cpp.s
+.PHONY : test/testParkingDualStack.cpp.s
 
 testCar_autogen/mocs_compilation.obj: testCar_autogen/mocs_compilation.cpp.obj
 .PHONY : testCar_autogen/mocs_compilation.obj
@@ -437,6 +599,78 @@ testCar_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.s
 .PHONY : testCar_autogen/mocs_compilation.cpp.s
 
+testDoublyLinkedList_autogen/mocs_compilation.obj: testDoublyLinkedList_autogen/mocs_compilation.cpp.obj
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.obj
+
+# target to build an object file
+testDoublyLinkedList_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.obj
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.cpp.obj
+
+testDoublyLinkedList_autogen/mocs_compilation.i: testDoublyLinkedList_autogen/mocs_compilation.cpp.i
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+testDoublyLinkedList_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.i
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.cpp.i
+
+testDoublyLinkedList_autogen/mocs_compilation.s: testDoublyLinkedList_autogen/mocs_compilation.cpp.s
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+testDoublyLinkedList_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.s
+.PHONY : testDoublyLinkedList_autogen/mocs_compilation.cpp.s
+
+testDualStack_autogen/mocs_compilation.obj: testDualStack_autogen/mocs_compilation.cpp.obj
+.PHONY : testDualStack_autogen/mocs_compilation.obj
+
+# target to build an object file
+testDualStack_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/testDualStack_autogen/mocs_compilation.cpp.obj
+.PHONY : testDualStack_autogen/mocs_compilation.cpp.obj
+
+testDualStack_autogen/mocs_compilation.i: testDualStack_autogen/mocs_compilation.cpp.i
+.PHONY : testDualStack_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+testDualStack_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/testDualStack_autogen/mocs_compilation.cpp.i
+.PHONY : testDualStack_autogen/mocs_compilation.cpp.i
+
+testDualStack_autogen/mocs_compilation.s: testDualStack_autogen/mocs_compilation.cpp.s
+.PHONY : testDualStack_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+testDualStack_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDualStack.dir\build.make CMakeFiles/testDualStack.dir/testDualStack_autogen/mocs_compilation.cpp.s
+.PHONY : testDualStack_autogen/mocs_compilation.cpp.s
+
+testParkingDualStack_autogen/mocs_compilation.obj: testParkingDualStack_autogen/mocs_compilation.cpp.obj
+.PHONY : testParkingDualStack_autogen/mocs_compilation.obj
+
+# target to build an object file
+testParkingDualStack_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/testParkingDualStack_autogen/mocs_compilation.cpp.obj
+.PHONY : testParkingDualStack_autogen/mocs_compilation.cpp.obj
+
+testParkingDualStack_autogen/mocs_compilation.i: testParkingDualStack_autogen/mocs_compilation.cpp.i
+.PHONY : testParkingDualStack_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+testParkingDualStack_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/testParkingDualStack_autogen/mocs_compilation.cpp.i
+.PHONY : testParkingDualStack_autogen/mocs_compilation.cpp.i
+
+testParkingDualStack_autogen/mocs_compilation.s: testParkingDualStack_autogen/mocs_compilation.cpp.s
+.PHONY : testParkingDualStack_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+testParkingDualStack_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/testParkingDualStack_autogen/mocs_compilation.cpp.s
+.PHONY : testParkingDualStack_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -456,27 +690,51 @@ help:
 	@echo ... release_translations
 	@echo ... testCar_autogen
 	@echo ... testCar_autogen_timestamp_deps
+	@echo ... testDoublyLinkedList_autogen
+	@echo ... testDoublyLinkedList_autogen_timestamp_deps
+	@echo ... testDualStack_autogen
+	@echo ... testDualStack_autogen_timestamp_deps
+	@echo ... testParkingDualStack_autogen
+	@echo ... testParkingDualStack_autogen_timestamp_deps
 	@echo ... update_translations
 	@echo ... StackLinkedParkingManager
 	@echo ... testCar
+	@echo ... testDoublyLinkedList
+	@echo ... testDualStack
+	@echo ... testParkingDualStack
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.obj
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.i
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.s
 	@echo ... build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.obj
 	@echo ... build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.i
 	@echo ... build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... mainwindow.obj
-	@echo ... mainwindow.i
-	@echo ... mainwindow.s
-	@echo ... testCar.obj
-	@echo ... testCar.i
-	@echo ... testCar.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... src/mainwindow.obj
+	@echo ... src/mainwindow.i
+	@echo ... src/mainwindow.s
+	@echo ... test/testCar.obj
+	@echo ... test/testCar.i
+	@echo ... test/testCar.s
+	@echo ... test/testDualStack.obj
+	@echo ... test/testDualStack.i
+	@echo ... test/testDualStack.s
+	@echo ... test/testParkingDualStack.obj
+	@echo ... test/testParkingDualStack.i
+	@echo ... test/testParkingDualStack.s
 	@echo ... testCar_autogen/mocs_compilation.obj
 	@echo ... testCar_autogen/mocs_compilation.i
 	@echo ... testCar_autogen/mocs_compilation.s
+	@echo ... testDoublyLinkedList_autogen/mocs_compilation.obj
+	@echo ... testDoublyLinkedList_autogen/mocs_compilation.i
+	@echo ... testDoublyLinkedList_autogen/mocs_compilation.s
+	@echo ... testDualStack_autogen/mocs_compilation.obj
+	@echo ... testDualStack_autogen/mocs_compilation.i
+	@echo ... testDualStack_autogen/mocs_compilation.s
+	@echo ... testParkingDualStack_autogen/mocs_compilation.obj
+	@echo ... testParkingDualStack_autogen/mocs_compilation.i
+	@echo ... testParkingDualStack_autogen/mocs_compilation.s
 .PHONY : help
 
 

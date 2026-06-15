@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\testDoublyLinkedList.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\testDoublyLinkedList.dir/objects.a @CMakeFiles\testDoublyLinkedList.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\testDoublyLinkedList.dir/objects.a -Wl,--no-whole-archive -o testDoublyLinkedList.exe -Wl,--out-implib,libtestDoublyLinkedList.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testDoublyLinkedList.dir\linkLibs.rsp
