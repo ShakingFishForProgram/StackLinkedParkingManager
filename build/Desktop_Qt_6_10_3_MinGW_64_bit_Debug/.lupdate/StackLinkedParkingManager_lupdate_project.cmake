@@ -1,0 +1,17 @@
+set(lupdate_project_file "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/CMakeLists.txt")
+set(lupdate_translations "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/StackLinkedParkingManager_zh_CN.ts")
+set(lupdate_include_paths "")
+set(lupdate_sources "")
+set(lupdate_subproject_count 2)
+
+set(lupdate_subproject1_source_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager")
+set(lupdate_subproject1_include_paths "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include;D:/Qt/6.10.3/mingw_64/include/QtCore;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/mkspecs/win32-g++;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/include/QtWidgets;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/include/QtGui;D:/Qt/6.10.3/mingw_64/include")
+set(lupdate_subproject1_sources "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/mocs_compilation.cpp;main.cpp;mainwindow.cpp;mainwindow.h;mainwindow.ui;Car.h;testCar.cpp;DualStack.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/StackLinkedParkingManager_translations.qrc;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_zh_CN.qm;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include/ui_mainwindow.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/timestamp;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_zh_CN.qm.rule;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/.qt/rcc/qrc_StackLinkedParkingManager_translations.cpp.rule;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/timestamp.rule")
+set(lupdate_subproject1_excluded "")
+set(lupdate_subproject1_autogen_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen")
+
+set(lupdate_subproject2_source_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager")
+set(lupdate_subproject2_include_paths "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/include")
+set(lupdate_subproject2_sources "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/mocs_compilation.cpp;testCar.cpp;Car.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/include/ui_mainwindow.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/timestamp;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen/timestamp.rule")
+set(lupdate_subproject2_excluded "")
+set(lupdate_subproject2_autogen_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar_autogen")

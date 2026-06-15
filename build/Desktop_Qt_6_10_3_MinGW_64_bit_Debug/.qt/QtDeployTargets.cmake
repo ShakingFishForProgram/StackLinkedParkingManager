@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_StackLinkedParkingManager_FILE D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager.exe)
+set(__QT_DEPLOY_TARGET_StackLinkedParkingManager_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_StackLinkedParkingManager_RUNTIME_DLLS D:/Qt/6.10.3/mingw_64/bin/Qt6Widgets.dll;D:/Qt/6.10.3/mingw_64/bin/Qt6Gui.dll;D:/Qt/6.10.3/mingw_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_testCar_FILE D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testCar.exe)
+set(__QT_DEPLOY_TARGET_testCar_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_testCar_RUNTIME_DLLS )

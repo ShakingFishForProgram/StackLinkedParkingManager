@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\StackLinkedParkingManager.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\StackLinkedParkingManager.dir/objects.a @CMakeFiles\StackLinkedParkingManager.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\StackLinkedParkingManager.dir/objects.a -Wl,--no-whole-archive -o StackLinkedParkingManager.exe -Wl,--out-implib,libStackLinkedParkingManager.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\StackLinkedParkingManager.dir\linkLibs.rsp

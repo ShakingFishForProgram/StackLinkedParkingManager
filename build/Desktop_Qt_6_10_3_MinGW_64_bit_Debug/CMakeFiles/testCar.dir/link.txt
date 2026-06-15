@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\testCar.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\testCar.dir/objects.a @CMakeFiles\testCar.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\testCar.dir/objects.a -Wl,--no-whole-archive -o testCar.exe -Wl,--out-implib,libtestCar.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testCar.dir\linkLibs.rsp
