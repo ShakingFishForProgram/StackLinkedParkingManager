@@ -13,6 +13,7 @@ class Car {
         bool isInPark;
         time_t inStackTime;
         time_t outStackTime;
+        time_t totalTime;
 
     public:
         Car(string id) {

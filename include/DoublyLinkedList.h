@@ -2,6 +2,7 @@
 #define DOUBLYLINKEDLIST_H
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ class Node{
 
 template <typename T>
 class DoublyLinkedList {
-    private:
+    protected:
         Node<T>* firstNode;
         int size;
 
@@ -233,6 +234,10 @@ class DoublyLinkedList {
             size ++;
 
             return true;
+        }
+
+        bool push(const T& element) {
+            return (this->insert(this->size, element));
         }
 
         void showDoublyLinkedList() const {

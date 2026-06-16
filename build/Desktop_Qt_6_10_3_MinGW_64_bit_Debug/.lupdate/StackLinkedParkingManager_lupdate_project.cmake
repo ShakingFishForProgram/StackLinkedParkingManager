@@ -2,7 +2,7 @@ set(lupdate_project_file "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/C
 set(lupdate_translations "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/StackLinkedParkingManager_zh_CN.ts")
 set(lupdate_include_paths "")
 set(lupdate_sources "")
-set(lupdate_subproject_count 6)
+set(lupdate_subproject_count 7)
 
 set(lupdate_subproject1_source_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager")
 set(lupdate_subproject1_include_paths "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/StackLinkedParkingManager_autogen/include;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include;D:/Qt/6.10.3/mingw_64/include/QtCore;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/mkspecs/win32-g++;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/include/QtWidgets;D:/Qt/6.10.3/mingw_64/include;D:/Qt/6.10.3/mingw_64/include/QtGui;D:/Qt/6.10.3/mingw_64/include")
@@ -39,3 +39,9 @@ set(lupdate_subproject6_include_paths "D:/MainFiles/STUDY/PROJECT/StackLinkedPar
 set(lupdate_subproject6_sources "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedListCar_autogen/mocs_compilation.cpp;test/testDoublyLinkedListCar.cpp;include/DoublyLinkedList.h;include/Car.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedListCar_autogen/include/src/ui_mainwindow.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedListCar_autogen/timestamp;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedListCar_autogen/timestamp.rule")
 set(lupdate_subproject6_excluded "")
 set(lupdate_subproject6_autogen_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedListCar_autogen")
+
+set(lupdate_subproject7_source_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager")
+set(lupdate_subproject7_include_paths "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen/include;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include")
+set(lupdate_subproject7_sources "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen/mocs_compilation.cpp;test/testParkingStructure.cpp;include/ParkingStructure.h;include/ParkingDualStack.h;include/ParkingDoublyLinkedList.h;include/DualStack.h;include/DoublyLinkedList.h;include/Car.h;include/ParkingInterfaces.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen/include/src/ui_mainwindow.h;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen/timestamp;D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen/timestamp.rule")
+set(lupdate_subproject7_excluded "")
+set(lupdate_subproject7_autogen_dir "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testParkingStructure_autogen")

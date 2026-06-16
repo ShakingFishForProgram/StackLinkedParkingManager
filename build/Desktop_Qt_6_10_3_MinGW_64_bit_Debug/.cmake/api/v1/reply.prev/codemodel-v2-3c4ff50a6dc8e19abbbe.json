@@ -37,7 +37,10 @@
 						18,
 						19,
 						20,
-						21
+						21,
+						22,
+						23,
+						24
 					]
 				}
 			],
@@ -73,7 +76,10 @@
 						18,
 						19,
 						20,
-						21
+						21,
+						22,
+						23,
+						24
 					]
 				}
 			],
@@ -82,7 +88,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "StackLinkedParkingManager::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-StackLinkedParkingManager-Debug-2312146ffed24625e7ef.json",
+					"jsonFile" : "target-StackLinkedParkingManager-Debug-ad333a1d4e0980b44413.json",
 					"name" : "StackLinkedParkingManager",
 					"projectIndex" : 0
 				},
@@ -124,7 +130,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "testCar::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-testCar-Debug-97403fd1795cbbc29fb6.json",
+					"jsonFile" : "target-testCar-Debug-dc4eb1c460c289e4d1c0.json",
 					"name" : "testCar",
 					"projectIndex" : 0
 				},
@@ -187,7 +193,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "testDualStack::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-testDualStack-Debug-b692992252647b32a723.json",
+					"jsonFile" : "target-testDualStack-Debug-0ab37d91143c558bd18e.json",
 					"name" : "testDualStack",
 					"projectIndex" : 0
 				},
@@ -208,7 +214,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "testParkingDualStack::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-testParkingDualStack-Debug-557b7032d735714530ac.json",
+					"jsonFile" : "target-testParkingDualStack-Debug-73aa3daa17edc0070d95.json",
 					"name" : "testParkingDualStack",
 					"projectIndex" : 0
 				},
@@ -224,6 +230,27 @@
 					"id" : "testParkingDualStack_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-testParkingDualStack_autogen_timestamp_deps-Debug-2dc54283bf06da092405.json",
 					"name" : "testParkingDualStack_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testParkingStructure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testParkingStructure-Debug-d190d2b04ccf4a137c5b.json",
+					"name" : "testParkingStructure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testParkingStructure_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testParkingStructure_autogen-Debug-69308b50969296074e57.json",
+					"name" : "testParkingStructure_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testParkingStructure_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testParkingStructure_autogen_timestamp_deps-Debug-34ed7781b5a0d5d2275d.json",
+					"name" : "testParkingStructure_autogen_timestamp_deps",
 					"projectIndex" : 0
 				},
 				{

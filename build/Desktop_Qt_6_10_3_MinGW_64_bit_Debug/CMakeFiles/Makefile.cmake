@@ -227,6 +227,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/testParkingDualStack_autogen.dir/AutogenInfo.json"
   "CMakeFiles/testDoublyLinkedList_autogen.dir/AutogenInfo.json"
   "CMakeFiles/testDoublyLinkedListCar_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/testParkingStructure_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/deploy_StackLinkedParkingManager_e800c912c9.cmake"
   ".qt/QtDeployTargets.cmake"
@@ -242,6 +243,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/testParkingDualStack.dir/DependInfo.cmake"
   "CMakeFiles/testDoublyLinkedList.dir/DependInfo.cmake"
   "CMakeFiles/testDoublyLinkedListCar.dir/DependInfo.cmake"
+  "CMakeFiles/testParkingStructure.dir/DependInfo.cmake"
   "CMakeFiles/StackLinkedParkingManager_lupdate.dir/DependInfo.cmake"
   "CMakeFiles/update_translations.dir/DependInfo.cmake"
   "CMakeFiles/StackLinkedParkingManager_lrelease.dir/DependInfo.cmake"
@@ -258,4 +260,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/testDoublyLinkedList_autogen.dir/DependInfo.cmake"
   "CMakeFiles/testDoublyLinkedListCar_autogen_timestamp_deps.dir/DependInfo.cmake"
   "CMakeFiles/testDoublyLinkedListCar_autogen.dir/DependInfo.cmake"
+  "CMakeFiles/testParkingStructure_autogen_timestamp_deps.dir/DependInfo.cmake"
+  "CMakeFiles/testParkingStructure_autogen.dir/DependInfo.cmake"
   )

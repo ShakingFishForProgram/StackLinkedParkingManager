@@ -239,6 +239,19 @@ testDoublyLinkedListCar/fast:
 .PHONY : testDoublyLinkedListCar/fast
 
 #=============================================================================
+# Target rules for targets named testParkingStructure
+
+# Build rule for target.
+testParkingStructure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingStructure
+.PHONY : testParkingStructure
+
+# fast build rule for target.
+testParkingStructure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/build
+.PHONY : testParkingStructure/fast
+
+#=============================================================================
 # Target rules for targets named StackLinkedParkingManager_lupdate
 
 # Build rule for target.
@@ -445,6 +458,32 @@ testDoublyLinkedListCar_autogen: cmake_check_build_system
 testDoublyLinkedListCar_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar_autogen.dir\build.make CMakeFiles/testDoublyLinkedListCar_autogen.dir/build
 .PHONY : testDoublyLinkedListCar_autogen/fast
+
+#=============================================================================
+# Target rules for targets named testParkingStructure_autogen_timestamp_deps
+
+# Build rule for target.
+testParkingStructure_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingStructure_autogen_timestamp_deps
+.PHONY : testParkingStructure_autogen_timestamp_deps
+
+# fast build rule for target.
+testParkingStructure_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure_autogen_timestamp_deps.dir\build.make CMakeFiles/testParkingStructure_autogen_timestamp_deps.dir/build
+.PHONY : testParkingStructure_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named testParkingStructure_autogen
+
+# Build rule for target.
+testParkingStructure_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testParkingStructure_autogen
+.PHONY : testParkingStructure_autogen
+
+# fast build rule for target.
+testParkingStructure_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure_autogen.dir\build.make CMakeFiles/testParkingStructure_autogen.dir/build
+.PHONY : testParkingStructure_autogen/fast
 
 StackLinkedParkingManager_autogen/mocs_compilation.obj: StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj
 .PHONY : StackLinkedParkingManager_autogen/mocs_compilation.obj
@@ -662,6 +701,30 @@ test/testParkingDualStack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/test/testParkingDualStack.cpp.s
 .PHONY : test/testParkingDualStack.cpp.s
 
+test/testParkingStructure.obj: test/testParkingStructure.cpp.obj
+.PHONY : test/testParkingStructure.obj
+
+# target to build an object file
+test/testParkingStructure.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/test/testParkingStructure.cpp.obj
+.PHONY : test/testParkingStructure.cpp.obj
+
+test/testParkingStructure.i: test/testParkingStructure.cpp.i
+.PHONY : test/testParkingStructure.i
+
+# target to preprocess a source file
+test/testParkingStructure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/test/testParkingStructure.cpp.i
+.PHONY : test/testParkingStructure.cpp.i
+
+test/testParkingStructure.s: test/testParkingStructure.cpp.s
+.PHONY : test/testParkingStructure.s
+
+# target to generate assembly for a file
+test/testParkingStructure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/test/testParkingStructure.cpp.s
+.PHONY : test/testParkingStructure.cpp.s
+
 testCar_autogen/mocs_compilation.obj: testCar_autogen/mocs_compilation.cpp.obj
 .PHONY : testCar_autogen/mocs_compilation.obj
 
@@ -782,6 +845,30 @@ testParkingDualStack_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingDualStack.dir\build.make CMakeFiles/testParkingDualStack.dir/testParkingDualStack_autogen/mocs_compilation.cpp.s
 .PHONY : testParkingDualStack_autogen/mocs_compilation.cpp.s
 
+testParkingStructure_autogen/mocs_compilation.obj: testParkingStructure_autogen/mocs_compilation.cpp.obj
+.PHONY : testParkingStructure_autogen/mocs_compilation.obj
+
+# target to build an object file
+testParkingStructure_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/testParkingStructure_autogen/mocs_compilation.cpp.obj
+.PHONY : testParkingStructure_autogen/mocs_compilation.cpp.obj
+
+testParkingStructure_autogen/mocs_compilation.i: testParkingStructure_autogen/mocs_compilation.cpp.i
+.PHONY : testParkingStructure_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+testParkingStructure_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/testParkingStructure_autogen/mocs_compilation.cpp.i
+.PHONY : testParkingStructure_autogen/mocs_compilation.cpp.i
+
+testParkingStructure_autogen/mocs_compilation.s: testParkingStructure_autogen/mocs_compilation.cpp.s
+.PHONY : testParkingStructure_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+testParkingStructure_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testParkingStructure.dir\build.make CMakeFiles/testParkingStructure.dir/testParkingStructure_autogen/mocs_compilation.cpp.s
+.PHONY : testParkingStructure_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -809,6 +896,8 @@ help:
 	@echo ... testDualStack_autogen_timestamp_deps
 	@echo ... testParkingDualStack_autogen
 	@echo ... testParkingDualStack_autogen_timestamp_deps
+	@echo ... testParkingStructure_autogen
+	@echo ... testParkingStructure_autogen_timestamp_deps
 	@echo ... update_translations
 	@echo ... StackLinkedParkingManager
 	@echo ... testCar
@@ -816,6 +905,7 @@ help:
 	@echo ... testDoublyLinkedListCar
 	@echo ... testDualStack
 	@echo ... testParkingDualStack
+	@echo ... testParkingStructure
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.obj
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.i
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.s
@@ -843,6 +933,9 @@ help:
 	@echo ... test/testParkingDualStack.obj
 	@echo ... test/testParkingDualStack.i
 	@echo ... test/testParkingDualStack.s
+	@echo ... test/testParkingStructure.obj
+	@echo ... test/testParkingStructure.i
+	@echo ... test/testParkingStructure.s
 	@echo ... testCar_autogen/mocs_compilation.obj
 	@echo ... testCar_autogen/mocs_compilation.i
 	@echo ... testCar_autogen/mocs_compilation.s
@@ -858,6 +951,9 @@ help:
 	@echo ... testParkingDualStack_autogen/mocs_compilation.obj
 	@echo ... testParkingDualStack_autogen/mocs_compilation.i
 	@echo ... testParkingDualStack_autogen/mocs_compilation.s
+	@echo ... testParkingStructure_autogen/mocs_compilation.obj
+	@echo ... testParkingStructure_autogen/mocs_compilation.i
+	@echo ... testParkingStructure_autogen/mocs_compilation.s
 .PHONY : help
 
 

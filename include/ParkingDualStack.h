@@ -3,6 +3,7 @@
 
 #include "DualStack.h"
 #include "Car.h"
+#include "ParkingInterfaces.h"
 
 class ParkingDualStack : public DualStack<Car> {
     public:
@@ -35,6 +36,17 @@ class ParkingDualStack : public DualStack<Car> {
             } else {
                 return false;
             }
+        }
+
+        ParkingDualStackInterface& getPakingMessage() {
+            ParkingDualStackInterface* pdsi = new ParkingDualStackInterface(this->leftNumber);
+            for(int i=0; i<this->leftNumber; i++) {
+                pdsi->container[i].id = this->container[i].getId();
+                pdsi->container[i].totalTime = this->container[i].getPakingTime();
+                pdsi->container[i].calculatePrice();
+            }
+
+            return *pdsi;
         }
 
 };

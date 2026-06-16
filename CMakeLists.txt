@@ -77,3 +77,16 @@ add_executable(testDoublyLinkedListCar
 )
 
 target_include_directories(testDoublyLinkedListCar PRIVATE include)
+
+add_executable(testParkingStructure
+    test/testParkingStructure.cpp
+    include/ParkingStructure.h
+    include/ParkingDualStack.h
+    include/ParkingDoublyLinkedList.h
+    include/DualStack.h
+    include/DoublyLinkedList.h
+    include/Car.h
+    include/ParkingInterfaces.h
+)
+
+target_include_directories(testParkingStructure PRIVATE include)
