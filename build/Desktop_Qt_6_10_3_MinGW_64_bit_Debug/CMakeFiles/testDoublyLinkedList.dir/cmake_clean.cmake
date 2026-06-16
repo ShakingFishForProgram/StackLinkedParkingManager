@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.obj"
+  "CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.obj.d"
   "CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/testDoublyLinkedList_autogen.dir/AutogenUsed.txt"

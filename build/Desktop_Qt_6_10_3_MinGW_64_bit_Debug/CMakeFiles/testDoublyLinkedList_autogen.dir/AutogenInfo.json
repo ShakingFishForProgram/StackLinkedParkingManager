@@ -390,7 +390,15 @@
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedList_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "testDoublyLinkedList_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/include/DoublyLinkedList.h",
+			"MU",
+			"6YEA5652QU/moc_DoublyLinkedList.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedList_autogen/include",
 	"MOC_COMPILATION_FILE" : "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedList_autogen/mocs_compilation.cpp",
@@ -453,7 +461,14 @@
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 10,
 	"SETTINGS_FILE" : "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/CMakeFiles/testDoublyLinkedList_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testDoublyLinkedList.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 

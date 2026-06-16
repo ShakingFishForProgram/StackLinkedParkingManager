@@ -226,6 +226,19 @@ testDoublyLinkedList/fast:
 .PHONY : testDoublyLinkedList/fast
 
 #=============================================================================
+# Target rules for targets named testDoublyLinkedListCar
+
+# Build rule for target.
+testDoublyLinkedListCar: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedListCar
+.PHONY : testDoublyLinkedListCar
+
+# fast build rule for target.
+testDoublyLinkedListCar/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/build
+.PHONY : testDoublyLinkedListCar/fast
+
+#=============================================================================
 # Target rules for targets named StackLinkedParkingManager_lupdate
 
 # Build rule for target.
@@ -407,6 +420,32 @@ testDoublyLinkedList_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList_autogen.dir\build.make CMakeFiles/testDoublyLinkedList_autogen.dir/build
 .PHONY : testDoublyLinkedList_autogen/fast
 
+#=============================================================================
+# Target rules for targets named testDoublyLinkedListCar_autogen_timestamp_deps
+
+# Build rule for target.
+testDoublyLinkedListCar_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedListCar_autogen_timestamp_deps
+.PHONY : testDoublyLinkedListCar_autogen_timestamp_deps
+
+# fast build rule for target.
+testDoublyLinkedListCar_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar_autogen_timestamp_deps.dir\build.make CMakeFiles/testDoublyLinkedListCar_autogen_timestamp_deps.dir/build
+.PHONY : testDoublyLinkedListCar_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named testDoublyLinkedListCar_autogen
+
+# Build rule for target.
+testDoublyLinkedListCar_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testDoublyLinkedListCar_autogen
+.PHONY : testDoublyLinkedListCar_autogen
+
+# fast build rule for target.
+testDoublyLinkedListCar_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar_autogen.dir\build.make CMakeFiles/testDoublyLinkedListCar_autogen.dir/build
+.PHONY : testDoublyLinkedListCar_autogen/fast
+
 StackLinkedParkingManager_autogen/mocs_compilation.obj: StackLinkedParkingManager_autogen/mocs_compilation.cpp.obj
 .PHONY : StackLinkedParkingManager_autogen/mocs_compilation.obj
 
@@ -527,6 +566,54 @@ test/testCar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/test/testCar.cpp.s
 .PHONY : test/testCar.cpp.s
 
+test/testDoublyLinkedList.obj: test/testDoublyLinkedList.cpp.obj
+.PHONY : test/testDoublyLinkedList.obj
+
+# target to build an object file
+test/testDoublyLinkedList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.obj
+.PHONY : test/testDoublyLinkedList.cpp.obj
+
+test/testDoublyLinkedList.i: test/testDoublyLinkedList.cpp.i
+.PHONY : test/testDoublyLinkedList.i
+
+# target to preprocess a source file
+test/testDoublyLinkedList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.i
+.PHONY : test/testDoublyLinkedList.cpp.i
+
+test/testDoublyLinkedList.s: test/testDoublyLinkedList.cpp.s
+.PHONY : test/testDoublyLinkedList.s
+
+# target to generate assembly for a file
+test/testDoublyLinkedList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedList.dir\build.make CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.s
+.PHONY : test/testDoublyLinkedList.cpp.s
+
+test/testDoublyLinkedListCar.obj: test/testDoublyLinkedListCar.cpp.obj
+.PHONY : test/testDoublyLinkedListCar.obj
+
+# target to build an object file
+test/testDoublyLinkedListCar.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/test/testDoublyLinkedListCar.cpp.obj
+.PHONY : test/testDoublyLinkedListCar.cpp.obj
+
+test/testDoublyLinkedListCar.i: test/testDoublyLinkedListCar.cpp.i
+.PHONY : test/testDoublyLinkedListCar.i
+
+# target to preprocess a source file
+test/testDoublyLinkedListCar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/test/testDoublyLinkedListCar.cpp.i
+.PHONY : test/testDoublyLinkedListCar.cpp.i
+
+test/testDoublyLinkedListCar.s: test/testDoublyLinkedListCar.cpp.s
+.PHONY : test/testDoublyLinkedListCar.s
+
+# target to generate assembly for a file
+test/testDoublyLinkedListCar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/test/testDoublyLinkedListCar.cpp.s
+.PHONY : test/testDoublyLinkedListCar.cpp.s
+
 test/testDualStack.obj: test/testDualStack.cpp.obj
 .PHONY : test/testDualStack.obj
 
@@ -598,6 +685,30 @@ testCar_autogen/mocs_compilation.s: testCar_autogen/mocs_compilation.cpp.s
 testCar_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\testCar.dir\build.make CMakeFiles/testCar.dir/testCar_autogen/mocs_compilation.cpp.s
 .PHONY : testCar_autogen/mocs_compilation.cpp.s
+
+testDoublyLinkedListCar_autogen/mocs_compilation.obj: testDoublyLinkedListCar_autogen/mocs_compilation.cpp.obj
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.obj
+
+# target to build an object file
+testDoublyLinkedListCar_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/testDoublyLinkedListCar_autogen/mocs_compilation.cpp.obj
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.cpp.obj
+
+testDoublyLinkedListCar_autogen/mocs_compilation.i: testDoublyLinkedListCar_autogen/mocs_compilation.cpp.i
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+testDoublyLinkedListCar_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/testDoublyLinkedListCar_autogen/mocs_compilation.cpp.i
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.cpp.i
+
+testDoublyLinkedListCar_autogen/mocs_compilation.s: testDoublyLinkedListCar_autogen/mocs_compilation.cpp.s
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+testDoublyLinkedListCar_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testDoublyLinkedListCar.dir\build.make CMakeFiles/testDoublyLinkedListCar.dir/testDoublyLinkedListCar_autogen/mocs_compilation.cpp.s
+.PHONY : testDoublyLinkedListCar_autogen/mocs_compilation.cpp.s
 
 testDoublyLinkedList_autogen/mocs_compilation.obj: testDoublyLinkedList_autogen/mocs_compilation.cpp.obj
 .PHONY : testDoublyLinkedList_autogen/mocs_compilation.obj
@@ -690,6 +801,8 @@ help:
 	@echo ... release_translations
 	@echo ... testCar_autogen
 	@echo ... testCar_autogen_timestamp_deps
+	@echo ... testDoublyLinkedListCar_autogen
+	@echo ... testDoublyLinkedListCar_autogen_timestamp_deps
 	@echo ... testDoublyLinkedList_autogen
 	@echo ... testDoublyLinkedList_autogen_timestamp_deps
 	@echo ... testDualStack_autogen
@@ -700,6 +813,7 @@ help:
 	@echo ... StackLinkedParkingManager
 	@echo ... testCar
 	@echo ... testDoublyLinkedList
+	@echo ... testDoublyLinkedListCar
 	@echo ... testDualStack
 	@echo ... testParkingDualStack
 	@echo ... StackLinkedParkingManager_autogen/mocs_compilation.obj
@@ -717,6 +831,12 @@ help:
 	@echo ... test/testCar.obj
 	@echo ... test/testCar.i
 	@echo ... test/testCar.s
+	@echo ... test/testDoublyLinkedList.obj
+	@echo ... test/testDoublyLinkedList.i
+	@echo ... test/testDoublyLinkedList.s
+	@echo ... test/testDoublyLinkedListCar.obj
+	@echo ... test/testDoublyLinkedListCar.i
+	@echo ... test/testDoublyLinkedListCar.s
 	@echo ... test/testDualStack.obj
 	@echo ... test/testDualStack.i
 	@echo ... test/testDualStack.s
@@ -726,6 +846,9 @@ help:
 	@echo ... testCar_autogen/mocs_compilation.obj
 	@echo ... testCar_autogen/mocs_compilation.i
 	@echo ... testCar_autogen/mocs_compilation.s
+	@echo ... testDoublyLinkedListCar_autogen/mocs_compilation.obj
+	@echo ... testDoublyLinkedListCar_autogen/mocs_compilation.i
+	@echo ... testDoublyLinkedListCar_autogen/mocs_compilation.s
 	@echo ... testDoublyLinkedList_autogen/mocs_compilation.obj
 	@echo ... testDoublyLinkedList_autogen/mocs_compilation.i
 	@echo ... testDoublyLinkedList_autogen/mocs_compilation.s

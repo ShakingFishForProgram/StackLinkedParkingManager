@@ -69,3 +69,11 @@ add_executable(testDoublyLinkedList
 )
 
 target_include_directories(testDoublyLinkedList PRIVATE include)
+
+add_executable(testDoublyLinkedListCar
+    test/testDoublyLinkedListCar.cpp
+    include/DoublyLinkedList.h
+    include/Car.h
+)
+
+target_include_directories(testDoublyLinkedListCar PRIVATE include)

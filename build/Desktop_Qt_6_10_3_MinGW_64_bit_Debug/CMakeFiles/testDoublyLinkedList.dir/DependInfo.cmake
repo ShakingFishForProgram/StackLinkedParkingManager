@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/test/testDoublyLinkedList.cpp" "CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.obj" "gcc" "CMakeFiles/testDoublyLinkedList.dir/test/testDoublyLinkedList.cpp.obj.d"
   "D:/MainFiles/STUDY/PROJECT/StackLinkedParkingManager/build/Desktop_Qt_6_10_3_MinGW_64_bit_Debug/testDoublyLinkedList_autogen/mocs_compilation.cpp" "CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/testDoublyLinkedList.dir/testDoublyLinkedList_autogen/mocs_compilation.cpp.obj.d"
   )
 
