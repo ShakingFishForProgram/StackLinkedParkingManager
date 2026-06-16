@@ -103,3 +103,34 @@ add_executable(testParkingMessage
 )
 
 target_include_directories(testParkingMessage PRIVATE include)
+
+add_executable(ConsoleParking
+    src/console_main.cpp
+    include/Car.h
+    include/DoublyLinkedList.h
+    include/DualStack.h
+    include/ParkingDoublyLinkedList.h
+    include/ParkingDualStack.h
+    include/ParkingInterfaces.h
+    include/ParkingStructure.h
+)
+
+target_include_directories(ConsoleParking PRIVATE include)
+
+add_executable(HelloQt
+    src/hello_qt.cpp
+)
+
+target_link_libraries(HelloQt
+    PRIVATE
+        Qt::Core
+        Qt::Widgets
+)
+
+target_include_directories(HelloQt PRIVATE include)
+
+add_executable(test_cin
+    test/test_cin.cpp
+)
+
+target_include_directories(test_cin PRIVATE include)

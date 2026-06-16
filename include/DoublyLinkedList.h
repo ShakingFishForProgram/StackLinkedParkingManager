@@ -242,7 +242,7 @@ class DoublyLinkedList {
 
         void showDoublyLinkedList() const {
             if (this->size == 0) {
-                cout << "Empyt Doubly Linked List!";
+                cout << "Empty Doubly Linked List!";
             } else {
                 Node<T>* currentNode = this->firstNode;
                 while (currentNode != nullptr) {

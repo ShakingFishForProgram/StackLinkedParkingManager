@@ -63,6 +63,8 @@ class ParkingStructure {
         }
 
         ~ParkingStructure() {
+
+
             delete pds;
             delete pdll;
         }
@@ -130,6 +132,10 @@ class ParkingStructure {
             for(int i=0; i<pi.size; i++) {
                 pi.container[i].price = (double)pi.container[i].totalTime * this->unitPrice / 3600;
             }
+        }
+
+        double calculatePrice(time_t time) {
+            return time * this->unitPrice / 3600;
         }
 
         ParkingDualStackInterface& getStackMessage() {
