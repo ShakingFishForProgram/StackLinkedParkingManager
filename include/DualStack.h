@@ -162,8 +162,6 @@ class DualStack {
             return this->rightNumber;
         }
 
-
-
         bool pushDualStack(const T& obj) {
             return this->pushLeftStack(obj);
         }

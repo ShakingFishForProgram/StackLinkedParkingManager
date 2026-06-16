@@ -14,10 +14,6 @@ struct CarInfo {
         this->id = id;
         this->totalTime = totalTime;
     }
-
-    void calculatePrice() {
-        price = totalTime;
-    }
 };
 
 struct ParkingInterface {

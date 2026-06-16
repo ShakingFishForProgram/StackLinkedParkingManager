@@ -1,3 +1,0 @@
-D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\testDualStack.dir/objects.a
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\testDualStack.dir/objects.a @CMakeFiles\testDualStack.dir\objects1.rsp
-D:\Qt\Tools\mingw1310_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\testDualStack.dir/objects.a -Wl,--no-whole-archive -o testDualStack.exe -Wl,--out-implib,libtestDualStack.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testDualStack.dir\linkLibs.rsp

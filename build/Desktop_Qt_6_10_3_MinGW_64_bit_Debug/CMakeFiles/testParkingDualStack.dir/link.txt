@@ -1,3 +1,0 @@
-D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\testParkingDualStack.dir/objects.a
-D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\testParkingDualStack.dir/objects.a @CMakeFiles\testParkingDualStack.dir\objects1.rsp
-D:\Qt\Tools\mingw1310_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\testParkingDualStack.dir/objects.a -Wl,--no-whole-archive -o testParkingDualStack.exe -Wl,--out-implib,libtestParkingDualStack.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testParkingDualStack.dir\linkLibs.rsp

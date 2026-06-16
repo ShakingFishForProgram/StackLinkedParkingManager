@@ -6,6 +6,7 @@
 #include "Car.h"
 #include "ParkingDualStack.h"
 #include "ParkingDoublyLinkedList.h"
+#include "ParkingInterfaces.h"
 
 class ParkingStructure {
     private:
@@ -97,6 +98,7 @@ class ParkingStructure {
                     pdll->erase(indexOfCar);
                     return true;
                 }
+                return true;
             }
 
             return false;
@@ -109,6 +111,40 @@ class ParkingStructure {
             pdll->showDoublyLinkedList();
         }
 
+        bool addExtraTime(int seconds=0, int minutes=0, int hours=0) {
+            this->pds->addExtraTime(seconds, minutes, hours);
+            this->pdll->addExtraTime(seconds, minutes, hours);
+
+            return true;
+        }
+
+        void setUnitPrice(double unitPrice) {
+            this->unitPrice = unitPrice;
+        }
+
+        double getUnitPrice() {
+            return this->unitPrice;
+        }
+
+        void calculateTotalPrice(ParkingInterface& pi) {
+            for(int i=0; i<pi.size; i++) {
+                pi.container[i].price = (double)pi.container[i].totalTime * this->unitPrice / 3600;
+            }
+        }
+
+        ParkingDualStackInterface& getStackMessage() {
+            ParkingDualStackInterface* msg = new ParkingDualStackInterface(this->pds->getParkingMessage());
+            this->calculateTotalPrice(*msg);
+            return *msg;
+        }
+
+        ParkingDoublyLinkedListInterface& getLinkedListMessage() {
+            ParkingDoublyLinkedListInterface* msg = new ParkingDoublyLinkedListInterface(this->pdll->getParkingMessage());
+            for(int i=0; i<msg->size; i++) {
+                msg->container[i].price = 0;
+            }
+            return *msg;
+        }
 
 };
 

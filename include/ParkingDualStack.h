@@ -38,15 +38,30 @@ class ParkingDualStack : public DualStack<Car> {
             }
         }
 
-        ParkingDualStackInterface& getPakingMessage() {
+        ParkingDualStackInterface& getParkingMessage() {
             ParkingDualStackInterface* pdsi = new ParkingDualStackInterface(this->leftNumber);
             for(int i=0; i<this->leftNumber; i++) {
                 pdsi->container[i].id = this->container[i].getId();
-                pdsi->container[i].totalTime = this->container[i].getPakingTime();
-                pdsi->container[i].calculatePrice();
+                this->container[i].markMaintainingTimeStamp();
+                pdsi->container[i].totalTime = this->container[i].getMaintainingTime();
             }
 
             return *pdsi;
+        }
+
+        bool addExtraTime(int seconds=0, int minutes=0, int hours=0) {
+            for(int i=0; i<this->leftNumber; i++) {
+                int extraTime = 3600*hours + 60*minutes + seconds;
+                int originalTime = this->container[i].getExtraTime();
+                this->container[i].setExtraTime(originalTime + extraTime);
+            }
+
+            for(int i=0; i<this->rightNumber; i++) {
+                int extraTime = 3600*hours + 60*minutes + seconds;
+                int originalTime = this->container[this->size-1-i].getExtraTime();
+                this->container[this->size-1-i].setExtraTime(originalTime + extraTime);
+            }
+            return true;
         }
 
 };

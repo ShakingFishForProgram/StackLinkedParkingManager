@@ -26,18 +26,21 @@ class ParkingDoublyLinkedList : public DoublyLinkedList<Car> {
             return -1;
         }
 
-        ParkingDoublyLinkedListInterface& getPakingMessage() {
+        ParkingDoublyLinkedListInterface& getParkingMessage() {
             ParkingDoublyLinkedListInterface* pdll = new ParkingDoublyLinkedListInterface(this->size);
             Node<Car>* currentNode = this->firstNode;
             for(int i=0; i<this->size; i++) {
                 pdll->container[i].id = currentNode->value.getId();
-                pdll->container[i].totalTime = currentNode->value.getPakingTime();
-                pdll->container[i].calculatePrice();
+                pdll->container[i].totalTime = 0;
 
                 currentNode = currentNode->next;
             }
 
             return *pdll;
+        }
+
+        bool addExtraTime(int seconds=0, int minutes=0, int hours=0) {
+            return true;
         }
 };
 

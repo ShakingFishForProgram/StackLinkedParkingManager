@@ -12,8 +12,9 @@ class Car {
         string id;
         bool isInPark;
         time_t inStackTime;
+        time_t maintainingTime;
         time_t outStackTime;
-        time_t totalTime;
+        time_t extraTime;
 
     public:
         Car(string id) {
@@ -21,13 +22,16 @@ class Car {
             this->isInPark = false;
             this->inStackTime = 0;
             this->outStackTime = 0;
+            this->extraTime = 0;
         }
 
         Car() {
             this->id = "";
             this->isInPark = false;
             this->inStackTime = 0;
+            this->maintainingTime = 0;
             this->outStackTime = 0;
+            this->extraTime = 0;
         }
 
         void inPark() {
@@ -35,13 +39,21 @@ class Car {
             this->inStackTime = time(nullptr);
         }
 
+        void markMaintainingTimeStamp() {
+            this->maintainingTime = time(nullptr);
+        }
+
         void outPark() {
             this->outStackTime = time(nullptr);
             this->isInPark = false;
         }
 
+        time_t getMaintainingTime() const {
+            return (this->maintainingTime - this->inStackTime) + this->extraTime;
+        }
+
         time_t getPakingTime() const {
-            return (this->outStackTime - this->inStackTime);
+            return (this->outStackTime - this->inStackTime) + this->extraTime;
         }
 
         bool operator== (const Car& otherObj) const {
@@ -54,6 +66,14 @@ class Car {
 
         string getId() const {
             return this->id;
+        }
+
+        void setExtraTime(time_t targetTime) {
+            this->extraTime = targetTime;
+        }
+
+        time_t getExtraTime() {
+            return this->extraTime;
         }
 
         friend ostream& operator<<(ostream& os, const Car& car) {
