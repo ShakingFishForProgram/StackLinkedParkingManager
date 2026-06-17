@@ -4,6 +4,89 @@
 #include <QInputDialog>
 #include <QStyle>
 #include <QScreen>
+#include <QDialog>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+
+static void showSuccessDialog(QWidget* parent, const QString& title, const QString& text) {
+    QDialog* dialog = new QDialog(parent);
+    dialog->setWindowTitle(title);
+    dialog->setFixedSize(400, 56);
+    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 24px; }");
+
+    QVBoxLayout* layout = new QVBoxLayout(dialog);
+    layout->setContentsMargins(30, 30, 30, 30);
+
+    QLabel* label = new QLabel(text, dialog);
+    label->setWordWrap(true);
+    label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    label->setStyleSheet("font-size: 24px; font-family: 'YouYuan';");
+    layout->addWidget(label);
+
+    layout->addStretch();
+
+    QPushButton* okBtn = new QPushButton("OK", dialog);
+    okBtn->setFixedSize(100, 40);
+    okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
+
+    QHBoxLayout* btnLayout = new QHBoxLayout();
+    btnLayout->addStretch();
+    btnLayout->addWidget(okBtn);
+    layout->addLayout(btnLayout);
+
+    dialog->exec();
+    delete dialog;
+}
+
+static QString showInputDialog(QWidget* parent, const QString& title, const QString& label) {
+    QDialog* dialog = new QDialog(parent);
+    dialog->setWindowTitle(title);
+    dialog->setFixedSize(360, 200);
+    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 24px; }");
+
+    QVBoxLayout* layout = new QVBoxLayout(dialog);
+    layout->setContentsMargins(30, 30, 30, 30);
+
+    QLabel* lbl = new QLabel(label, dialog);
+    lbl->setStyleSheet("font-size: 20px; font-family: 'YouYuan';");
+    layout->addWidget(lbl);
+
+    layout->addSpacing(10);
+
+    QLineEdit* edit = new QLineEdit(dialog);
+    edit->setMinimumHeight(50);
+    edit->setStyleSheet("font-size: 20px; padding: 8px; border: 1px solid #bbb; border-radius: 5px;");
+    layout->addWidget(edit);
+
+    layout->addStretch();
+
+    QHBoxLayout* btnLayout = new QHBoxLayout();
+    btnLayout->addStretch();
+
+    QPushButton* okBtn = new QPushButton("OK", dialog);
+    okBtn->setFixedSize(100, 40);
+    okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
+
+    QPushButton* cancelBtn = new QPushButton("Cancel", dialog);
+    cancelBtn->setFixedSize(100, 40);
+    cancelBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    QObject::connect(cancelBtn, &QPushButton::clicked, dialog, &QDialog::reject);
+
+    btnLayout->addWidget(okBtn);
+    btnLayout->addSpacing(20);
+    btnLayout->addWidget(cancelBtn);
+    layout->addLayout(btnLayout);
+
+    QString result;
+    if (dialog->exec() == QDialog::Accepted) {
+        result = edit->text();
+    }
+    delete dialog;
+    return result;
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -69,6 +152,7 @@ MainWindow::MainWindow(QWidget *parent)
         "QTextEdit {"
         "  background-color: #F5F5F5;"
         "  border: 1px solid #ddd;"
+        "  border-radius: 10px;"
         "  font-size: 16px;"
         "}"
         "QMessageBox {"
@@ -80,7 +164,7 @@ MainWindow::MainWindow(QWidget *parent)
         "  font-size: 14px;"
         "}"
         "QInputDialog {"
-        "  min-width: 960px;"
+        "  min-width: 480px;"
         "}"
         "QInputDialog QLabel {"
         "  font-size: 18px;"
@@ -135,12 +219,7 @@ void MainWindow::on_btnCreateConfirm_clicked() {
     QString priceText = ui->editPrice->text();
 
     if (capText.isEmpty() || priceText.isEmpty()) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("请输入完整信息！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "请输入完整信息！");
         return;
     }
 
@@ -149,21 +228,11 @@ void MainWindow::on_btnCreateConfirm_clicked() {
     double price = priceText.toDouble(&priceOk);
 
     if (!capOk || capacity <= 0) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("停车场容量必须为正整数！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "停车场容量必须为正整数！");
         return;
     }
     if (!priceOk || price < 0) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("单价必须为非负数！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "单价必须为非负数！");
         return;
     }
 
@@ -172,13 +241,7 @@ void MainWindow::on_btnCreateConfirm_clicked() {
     parkCreated = true;
 
     {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("成功");
-        msgBox.setText("停车场创建成功！\n容量: " + QString::number(capacity) + "\n单价: " + QString::number(price) + " 元/小时");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(400);
-        msgBox.setStyleSheet("QMessageBox { font-size: 24px; } QPushButton { min-width: 80px; min-height: 30px; font-size: 16px; background-color: #808080; color: white; }");
-        msgBox.exec();
+        showSuccessDialog(this, "成功", "停车场创建成功！\n容量: " + QString::number(capacity) + "\n单价: " + QString::number(price) + " 元/小时");
     }
 
     refreshManagePage();
@@ -222,18 +285,12 @@ void MainWindow::on_btnManageBack_clicked() {
 
 void MainWindow::on_btnAddCar_clicked() {
     if (!park) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("请先创建停车场！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "请先创建停车场！");
         return;
     }
 
-    bool ok;
-    QString plate = QInputDialog::getText(this, "添加车辆", "请输入车牌号：", QLineEdit::Normal, "", &ok);
-    if (!ok || plate.isEmpty()) return;
+    QString plate = showInputDialog(this, "添加车辆", "请输入车牌号：");
+    if (plate.isEmpty()) return;
 
     Car newCar(plate.toStdString());
     park->insertPark(newCar);
@@ -242,43 +299,26 @@ void MainWindow::on_btnAddCar_clicked() {
 
 void MainWindow::on_btnRemoveCar_clicked() {
     if (!park) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("请先创建停车场！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "请先创建停车场！");
         return;
     }
 
-    bool ok;
-    QString plate = QInputDialog::getText(this, "删除车辆", "请输入要删除的车牌号：", QLineEdit::Normal, "", &ok);
-    if (!ok || plate.isEmpty()) return;
+    QString plate = showInputDialog(this, "删除车辆", "请输入要删除的车牌号：");
+    if (plate.isEmpty()) return;
 
     Car leftCar("");
     if (park->leavePark(plate.toStdString(), leftCar)) {
         time_t parkingTime = leftCar.getPakingTime();
         double fee = parkingTime * park->getUnitPrice() / 3600.0;
         {
-            QMessageBox msgBox;
-            msgBox.setWindowTitle("车辆离场");
-            msgBox.setText(QString("车辆 %1 已离场\n停车时间: %2 秒\n费用: %3 元")
+            showSuccessDialog(this, "车辆离场", QString("车辆 %1 已离场\n停车时间: %2 秒\n费用: %3 元")
                 .arg(QString::fromStdString(leftCar.getId()))
                 .arg(parkingTime)
                 .arg(fee, 0, 'f', 2));
-            msgBox.setIcon(QMessageBox::NoIcon);
-            msgBox.setMinimumWidth(600);
-            msgBox.setStyleSheet("QMessageBox { font-size: 24px; } QPushButton { min-width: 60px; min-height: 25px; font-size: 14px; background-color: #808080; color: white; }");
-            msgBox.exec();
         }
         refreshManagePage();
     } else {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("未找到该车辆！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "未找到该车辆！");
     }
 }
 
@@ -328,12 +368,7 @@ void MainWindow::on_btnRefreshCarInfo_clicked() {
 
 void MainWindow::on_btnConfirmAddTime_clicked() {
     if (!park) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("错误");
-        msgBox.setText("请先创建停车场！");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "错误", "请先创建停车场！");
         return;
     }
 
@@ -342,24 +377,13 @@ void MainWindow::on_btnConfirmAddTime_clicked() {
     int second = ui->spinAddSecond->value();
 
     if (hour == 0 && minute == 0 && second == 0) {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("提示");
-        msgBox.setText("未增加任何时间。");
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(200);
-        msgBox.exec();
+        showSuccessDialog(this, "提示", "未增加任何时间。");
         return;
     }
 
     park->addExtraTime(second, minute, hour);
     {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("成功");
-        msgBox.setText(QString("已增加 %1 时 %2 分 %3 秒").arg(hour).arg(minute).arg(second));
-        msgBox.setIcon(QMessageBox::NoIcon);
-        msgBox.setMinimumWidth(400);
-        msgBox.setStyleSheet("QMessageBox { font-size: 24px; } QPushButton { min-width: 60px; min-height: 25px; font-size: 14px; background-color: #808080; color: white; }");
-        msgBox.exec();
+        showSuccessDialog(this, "成功", QString("已增加 %1 时 %2 分 %3 秒").arg(hour).arg(minute).arg(second));
     }
     refreshCarInfoPage();
 }

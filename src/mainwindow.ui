@@ -160,7 +160,13 @@
         <item>
          <layout class="QHBoxLayout" name="layoutCapacity">
           <property name="spacing">
-           <number>4</number>
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
           </property>
           <item alignment="Qt::AlignmentFlag::AlignLeft">
            <widget class="QLabel" name="labelCapacity">
@@ -192,7 +198,13 @@
         <item>
          <layout class="QHBoxLayout" name="layoutPrice">
           <property name="spacing">
-           <number>4</number>
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
           </property>
           <item alignment="Qt::AlignmentFlag::AlignLeft">
            <widget class="QLabel" name="labelPrice">
@@ -234,35 +246,74 @@
           </property>
          </spacer>
         </item>
-         <item>
-          <layout class="QHBoxLayout" name="layoutCreateBtns">
           <item>
-           <widget class="QPushButton" name="btnCreateConfirm">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>56</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>确认创建</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnCreateBack">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>56</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>返回首页</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+           <layout class="QHBoxLayout" name="layoutCreateBtns">
+            <item>
+             <spacer name="horizontalSpacerCreateLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           <item>
+            <widget class="QPushButton" name="btnCreateConfirm">
+             <property name="minimumSize">
+              <size>
+               <width>252</width>
+               <height>63</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>确认创建</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacerBetweenCreate">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnCreateBack">
+             <property name="minimumSize">
+              <size>
+               <width>252</width>
+               <height>63</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>返回首页</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacerCreateRight">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
         </item>
         <item>
          <spacer name="verticalSpacerCreateBottom">
@@ -568,10 +619,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </spacer>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableCarInfo">
-          <property name="columnCount">
-           <number>3</number>
-          </property>
+          <widget class="QTableWidget" name="tableCarInfo">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>300</height>
+            </size>
+           </property>
+           <property name="columnCount">
+            <number>3</number>
+           </property>
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>250</number>
           </attribute>
@@ -698,35 +755,74 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </property>
          </spacer>
         </item>
-         <item>
-          <layout class="QHBoxLayout" name="layoutCarInfoBtns">
           <item>
-           <widget class="QPushButton" name="btnRefreshCarInfo">
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>刷新</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnCarInfoBack">
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>返回管理</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+           <layout class="QHBoxLayout" name="layoutCarInfoBtns">
+            <item>
+             <spacer name="horizontalSpacerCarInfoLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           <item>
+            <widget class="QPushButton" name="btnRefreshCarInfo">
+             <property name="minimumSize">
+              <size>
+               <width>252</width>
+               <height>63</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>刷新</string>
+             </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerBetweenCarInfo">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnCarInfoBack">
+             <property name="minimumSize">
+              <size>
+               <width>252</width>
+               <height>63</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>返回管理</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacerCarInfoRight">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
         </item>
         <item>
          <spacer name="verticalSpacerCarInfoBottom">
