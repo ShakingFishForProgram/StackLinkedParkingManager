@@ -1,3 +1,4 @@
+// 停车场管理系统 - 主窗口实现
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
@@ -9,6 +10,14 @@
 #include <QLabel>
 #include <QPushButton>
 
+// ============ 自定义对话框 ============
+
+/*
+ * 通用成功/错误/提示弹窗，固定大小，灰色 OK 按钮
+ * @param parent  父窗口指针
+ * @param title   弹窗标题
+ * @param text    弹窗显示文本内容
+ */
 static void showSuccessDialog(QWidget* parent, const QString& title, const QString& text) {
     QDialog* dialog = new QDialog(parent);
     dialog->setWindowTitle(title);
@@ -19,12 +28,12 @@ static void showSuccessDialog(QWidget* parent, const QString& title, const QStri
     dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowMaximizeButtonHint | Qt::MSWindowsFixedSizeDialogHint);
 
     QVBoxLayout* layout = new QVBoxLayout(dialog);
-    layout->setContentsMargins(10, 10, 10, 10);
+    layout->setContentsMargins(15, 10, 15, 10);
 
     QLabel* label = new QLabel(text, dialog);
     label->setWordWrap(true);
     label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    label->setStyleSheet("font-size: 20px; font-family: 'YouYuan';");
+    label->setStyleSheet("font-size: 18px; font-family: 'YouYuan';");
     layout->addWidget(label);
 
     layout->addStretch();
@@ -43,6 +52,13 @@ static void showSuccessDialog(QWidget* parent, const QString& title, const QStri
     delete dialog;
 }
 
+/*
+ * 通用输入弹窗，返回用户输入的车牌号，取消返回空字符串
+ * @param parent  父窗口指针
+ * @param title   弹窗标题
+ * @param label   输入框上方的提示文字
+ * @return        用户输入的车牌号，取消返回空字符串
+ */
 static QString showInputDialog(QWidget* parent, const QString& title, const QString& label) {
     QDialog* dialog = new QDialog(parent);
     dialog->setWindowTitle(title);
@@ -93,6 +109,8 @@ static QString showInputDialog(QWidget* parent, const QString& title, const QStr
     return result;
 }
 
+// ============ 构造函数与析构函数 ============
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -110,6 +128,7 @@ MainWindow::MainWindow(QWidget *parent)
         )
     );
 
+    // ===== 全局样式表 =====
     this->setStyleSheet(
         "* { font-family: 'YouYuan'; }"
         "QPushButton {"
@@ -183,9 +202,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->stackedWidget->setCurrentIndex(0);
 
+    // 系统说明页：取消滚动条
     ui->textAbout->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->textAbout->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    // 车辆信息表格：交替行颜色、无选中、行高
     ui->tableCarInfo->setAlternatingRowColors(true);
     ui->tableCarInfo->setSelectionMode(QAbstractItemView::NoSelection);
     ui->tableCarInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -194,6 +215,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->btnAboutBack->setStyleSheet("QPushButton { margin-top: 40px; background-color: #808080; color: white; font-size: 18px; }");
     ui->btnConfirmAddTime->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
+
+    ui->editCapacity->setStyleSheet("font-size: 20px; padding: 8px 12px; border: 1px solid #bbb; border-radius: 5px;");
+    ui->editPrice->setStyleSheet("font-size: 20px; padding: 8px 12px; border: 1px solid #bbb; border-radius: 5px;");
 }
 
 MainWindow::~MainWindow() {
@@ -203,26 +227,40 @@ MainWindow::~MainWindow() {
 
 // ============ 首页 ============
 
+/*
+ * 点击"创建停车场"按钮：切换到创建停车场页面
+ */
 void MainWindow::on_btnCreatePark_clicked() {
     ui->editCapacity->clear();
     ui->editPrice->clear();
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/*
+ * 点击"系统说明"按钮：切换到系统说明页面
+ */
 void MainWindow::on_btnAbout_clicked() {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
+/*
+ * 点击"退出程序"按钮：关闭主窗口
+ */
 void MainWindow::on_btnExit_clicked() {
     this->close();
 }
 
 // ============ 创建停车场 ============
 
+/*
+ * 点击"确认创建"按钮：校验输入并创建 ParkingStructure 对象
+ * 校验规则：容量必须为正整数，单价必须为非负数
+ */
 void MainWindow::on_btnCreateConfirm_clicked() {
     QString capText = ui->editCapacity->text();
     QString priceText = ui->editPrice->text();
 
+    // 输入检查
     if (capText.isEmpty() || priceText.isEmpty()) {
         showSuccessDialog(this, "错误", "请输入完整信息！");
         return;
@@ -253,6 +291,9 @@ void MainWindow::on_btnCreateConfirm_clicked() {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+/*
+ * 点击"返回首页"按钮：回到首页
+ */
 void MainWindow::on_btnCreateBack_clicked() {
     ui->stackedWidget->setCurrentIndex(0);
 }
@@ -265,18 +306,23 @@ void MainWindow::on_btnAboutBack_clicked() {
 
 // ============ 管理页面 ============
 
+/*
+ * 刷新管理页面：更新栈内车辆和便道车辆列表显示
+ */
 void MainWindow::refreshManagePage() {
     if (!park) return;
 
     ui->listStack->clear();
     ui->listWaiting->clear();
 
+    // 刷新栈内车辆列表
     ParkingDualStackInterface& stackMsg = park->getStackMessage();
     for (int i = 0; i < stackMsg.size; i++) {
         ui->listStack->addItem(QString::fromStdString(stackMsg.container[i].id));
     }
-    ui->labelStackStatus->setText(QString("容量: %1/%2").arg(stackMsg.size).arg(park->getStackMessage().size));
+    ui->labelStackStatus->setText(QString("容量: %1/%2").arg(stackMsg.size).arg(park->getSize()));
 
+    // 刷新便道车辆列表
     ParkingDoublyLinkedListInterface& listMsg = park->getLinkedListMessage();
     for (int i = 0; i < listMsg.size; i++) {
         ui->listWaiting->addItem(QString::fromStdString(listMsg.container[i].id));
@@ -288,6 +334,9 @@ void MainWindow::on_btnManageBack_clicked() {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/*
+ * 添加车辆：弹出输入框获取车牌号，然后调用 insertPark 入场
+ */
 void MainWindow::on_btnAddCar_clicked() {
     if (!park) {
         showSuccessDialog(this, "错误", "请先创建停车场！");
@@ -296,12 +345,21 @@ void MainWindow::on_btnAddCar_clicked() {
 
     QString plate = showInputDialog(this, "添加车辆", "请输入车牌号：");
     if (plate.isEmpty()) return;
+    string newCarId = plate.toStdString();
+    if (park->isExist(newCarId)) {
+        showSuccessDialog(this, "警告", "该汽车已经存在！");
+        return;
+    }
 
-    Car newCar(plate.toStdString());
+    Car newCar(newCarId);
     park->insertPark(newCar);
     refreshManagePage();
 }
 
+/*
+ * 删除车辆：弹出输入框获取车牌号，调用 leavePark 尝试离场
+ * 离场成功后显示停车时间和费用
+ */
 void MainWindow::on_btnRemoveCar_clicked() {
     if (!park) {
         showSuccessDialog(this, "错误", "请先创建停车场！");
@@ -317,9 +375,9 @@ void MainWindow::on_btnRemoveCar_clicked() {
         double fee = parkingTime * park->getUnitPrice() / 3600.0;
         {
             showSuccessDialog(this, "车辆离场", QString("车辆 %1 已离场\n停车时间: %2 秒\n费用: %3 元")
-                .arg(QString::fromStdString(leftCar.getId()))
-                .arg(parkingTime)
-                .arg(fee, 0, 'f', 2));
+                                                        .arg(QString::fromStdString(leftCar.getId()))
+                                                        .arg(parkingTime)
+                                                        .arg(fee, 0, 'f', 2));
         }
         refreshManagePage();
     } else {
@@ -327,6 +385,9 @@ void MainWindow::on_btnRemoveCar_clicked() {
     }
 }
 
+/*
+ * 点击"车辆信息"按钮：切换到车辆信息页面并刷新表格
+ */
 void MainWindow::on_btnCarInfo_clicked() {
     if (!park) {
         QMessageBox msgBox;
@@ -343,6 +404,10 @@ void MainWindow::on_btnCarInfo_clicked() {
 
 // ============ 车辆信息页面 ============
 
+/*
+ * 刷新车辆信息表格：从栈中获取最新数据并显示
+ * 显示内容包括：车牌号、停车总时长、费用
+ */
 void MainWindow::refreshCarInfoPage() {
     if (!park) return;
 
@@ -363,14 +428,24 @@ void MainWindow::refreshCarInfoPage() {
     }
 }
 
+/*
+ * 点击"返回管理"按钮：回到管理页面
+ */
 void MainWindow::on_btnCarInfoBack_clicked() {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+/*
+ * 点击"刷新"按钮：重新加载车辆信息表格数据
+ */
 void MainWindow::on_btnRefreshCarInfo_clicked() {
     refreshCarInfoPage();
 }
 
+/*
+ * 点击"确认增加"按钮：给所有在场车辆追加调试时间
+ * @note 时间单位由 addExtraTime 内部处理：hours=小时, minutes=分钟, seconds=秒
+ */
 void MainWindow::on_btnConfirmAddTime_clicked() {
     if (!park) {
         showSuccessDialog(this, "错误", "请先创建停车场！");

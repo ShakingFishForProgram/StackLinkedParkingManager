@@ -69,6 +69,10 @@ class ParkingStructure {
             delete pdll;
         }
 
+        int getSize() {
+            return this->size;
+        }
+
 
         bool insertPark (Car& insertCar) {
 
@@ -100,7 +104,7 @@ class ParkingStructure {
                     pdll->erase(indexOfCar);
                     return true;
                 }
-                return true;
+                return false;
             }
 
             return false;
@@ -150,6 +154,28 @@ class ParkingStructure {
                 msg->container[i].price = 0;
             }
             return *msg;
+        }
+
+        bool isExist(string key) {
+            ParkingDualStackInterface& stackMsg = this->getStackMessage();
+            ParkingDoublyLinkedListInterface& linkedListMsg = this->getLinkedListMessage();
+
+            bool isExist = false;
+            for(int i=0; i<stackMsg.size; i++) {
+                if(stackMsg.container[i].id == key) {
+                    isExist = true;
+                    break;
+                }
+            }
+            if (!isExist) {
+                for (int i=0; i<linkedListMsg.size; i++) {
+                    if(linkedListMsg.container[i].id == key) {
+                        isExist = true;
+                        break;
+                    }
+                }
+            }
+            return isExist;
         }
 
 };
