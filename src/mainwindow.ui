@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>630</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageHome">
        <layout class="QVBoxLayout" name="verticalLayoutHome">
@@ -73,6 +73,19 @@
           </property>
           <property name="text">
            <string>创建停车场</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignHCenter">
+         <widget class="QPushButton" name="btnImportPark">
+          <property name="minimumSize">
+           <size>
+            <width>336</width>
+            <height>63</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>导入停车场</string>
           </property>
          </widget>
         </item>
@@ -181,6 +194,18 @@
              <number>15</number>
             </property>
             <item alignment="Qt::AlignmentFlag::AlignLeft">
+             <widget class="QLabel" name="labelParkName">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>停车场名称：</string>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QLabel" name="labelCapacity">
               <property name="font">
                <font>
@@ -224,6 +249,19 @@
             <property name="spacing">
              <number>15</number>
             </property>
+            <item alignment="Qt::AlignmentFlag::AlignRight">
+             <widget class="QLineEdit" name="editParkName">
+              <property name="minimumSize">
+               <size>
+                <width>500</width>
+                <height>68</height>
+               </size>
+              </property>
+              <property name="placeholderText">
+               <string>请输入停车场名称</string>
+              </property>
+             </widget>
+            </item>
             <item alignment="Qt::AlignmentFlag::AlignRight">
              <widget class="QLineEdit" name="editCapacity">
               <property name="minimumSize">
@@ -478,54 +516,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <layout class="QHBoxLayout" name="layoutManageToolbar">
           <item>
-           <widget class="QPushButton" name="btnManageBack">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>45</height>
-             </size>
+           <widget class="QLabel" name="labelParkNameDisplay">
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <bold>true</bold>
+             </font>
             </property>
             <property name="text">
-             <string>返回首页</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnAddCar">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>45</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>添加车辆</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnRemoveCar">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>45</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>删除车辆</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnCarInfo">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>45</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>车辆信息</string>
+             <string>停车场</string>
             </property>
            </widget>
           </item>
@@ -541,6 +540,71 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </size>
             </property>
            </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnManageBack">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>返回首页</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnAddCar">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>添加车辆</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRemoveCar">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>删除车辆</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCarInfo">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>车辆信息</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExportInfo">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>导出信息</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -700,161 +764,339 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </spacer>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="layoutAddTime">
-          <item alignment="Qt::AlignmentFlag::AlignRight">
-           <widget class="QLabel" name="labelAddTime">
-            <property name="font">
-             <font>
-              <pointsize>16</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>增加额外时间：</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="spinAddHour">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="suffix">
-             <string> h</string>
-            </property>
-            <property name="maximum">
-             <number>999</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="spinAddMinute">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="suffix">
-             <string> m</string>
-            </property>
-            <property name="maximum">
-             <number>59</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="spinAddSecond">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="suffix">
-             <string> s</string>
-            </property>
-            <property name="maximum">
-             <number>59</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnConfirmAddTime">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>确认增加</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacerCarInfoBtns">
-          <property name="orientation">
-           <enum>Qt::Orientation::Vertical</enum>
+         <layout class="QVBoxLayout" name="verticalLayoutBottomArea">
+          <property name="spacing">
+           <number>6</number>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="layoutCarInfoBtns">
           <item>
-           <spacer name="horizontalSpacerCarInfoLeft">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
+           <layout class="QHBoxLayout" name="layoutAddTimeRow">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+            <item>
+             <spacer name="horizontalSpacerAddTimeLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
+             <widget class="QLabel" name="labelAddTime">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>增加额外时间：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spinAddHour">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>999</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelHourUnit">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>时</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spinAddMinute">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>59</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelMinuteUnit">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>分</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spinAddSecond">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>59</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelSecondUnit">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>秒</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerAddTimeStretch">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnConfirmAddTime">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>确认增加</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerAddTimeRight">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="btnRefreshCarInfo">
-            <property name="minimumSize">
-             <size>
-              <width>252</width>
-              <height>63</height>
-             </size>
+           <layout class="QHBoxLayout" name="layoutPriceRow">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="text">
-             <string>刷新</string>
-            </property>
-           </widget>
+            <item>
+             <spacer name="horizontalSpacerPriceLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
+             <widget class="QLabel" name="labelSetPrice">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>单价：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="spinSetPrice">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="decimals">
+               <number>2</number>
+              </property>
+              <property name="maximum">
+               <double>99999.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>1.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelPriceUnit">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>元/小时                           </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerPriceStretch">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnSetPrice">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>确认修改</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerPriceRight">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
           <item>
-           <spacer name="horizontalSpacerBetweenCarInfo">
+           <spacer name="verticalSpacerCarInfoBtnGap">
             <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>20</height>
+              <height>6</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="btnCarInfoBack">
-            <property name="minimumSize">
-             <size>
-              <width>252</width>
-              <height>63</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>返回管理</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacerCarInfoRight">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+           <layout class="QHBoxLayout" name="layoutCarInfoBtns">
+            <item>
+             <spacer name="horizontalSpacerCarInfoLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnRefreshCarInfo">
+              <property name="minimumSize">
+               <size>
+                <width>252</width>
+                <height>63</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>刷新</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerBetweenCarInfo">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnCarInfoBack">
+              <property name="minimumSize">
+               <size>
+                <width>252</width>
+                <height>63</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>返回管理</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerCarInfoRight">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -866,10 +1108,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>20</height>
+            <height>10</height>
            </size>
           </property>
          </spacer>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignLeft">
+         <widget class="QLabel" name="labelParkNameFooter">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

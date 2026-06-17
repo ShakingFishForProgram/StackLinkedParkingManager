@@ -18,6 +18,7 @@ qt_add_executable(StackLinkedParkingManager
     include/ParkingDualStack.h
     include/ParkingInterfaces.h
     include/ParkingStructure.h
+    include/ParkingFileManager.h
 )
 
 qt_add_translations(
@@ -120,6 +121,7 @@ add_executable(ConsoleParking
     include/ParkingDualStack.h
     include/ParkingInterfaces.h
     include/ParkingStructure.h
+    include/ParkingFileManager.h
 )
 
 target_include_directories(ConsoleParking PRIVATE include)

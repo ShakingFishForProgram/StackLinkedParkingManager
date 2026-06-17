@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
 #include "ParkingStructure.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,7 @@ private slots:
     void on_btnCreatePark_clicked();
     void on_btnAbout_clicked();
     void on_btnExit_clicked();
+    void on_btnImportPark_clicked();
 
     void on_btnCreateConfirm_clicked();
     void on_btnCreateBack_clicked();
@@ -31,10 +33,12 @@ private slots:
     void on_btnAddCar_clicked();
     void on_btnRemoveCar_clicked();
     void on_btnCarInfo_clicked();
+    void on_btnExportInfo_clicked();
 
     void on_btnCarInfoBack_clicked();
     void on_btnRefreshCarInfo_clicked();
     void on_btnConfirmAddTime_clicked();
+    void on_btnSetPrice_clicked();
 
 private:
     void refreshManagePage();
@@ -43,6 +47,7 @@ private:
     Ui::MainWindow *ui;
     ParkingStructure *park;
     bool parkCreated;
+    std::string parkName;
 };
 
 #endif // MAINWINDOW_H

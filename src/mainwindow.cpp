@@ -3,12 +3,14 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QFileDialog>
 #include <QStyle>
 #include <QScreen>
 #include <QDialog>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include "ParkingFileManager.h"
 
 // ============ 自定义对话框 ============
 
@@ -118,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent)
     , parkCreated(false)
 {
     ui->setupUi(this);
-    this->resize(1000, 700);
+    this->resize(1000, 770);
     this->setGeometry(
         QStyle::alignedRect(
             Qt::LeftToRight,
@@ -168,7 +170,7 @@ MainWindow::MainWindow(QWidget *parent)
         "  color: black;"
         "}"
         "QListWidget {"
-        "  font-size: 24px;"
+        "  font-size: 36px;"
         "}"
         "QListWidget::item {"
         "  padding: 10px;"
@@ -216,8 +218,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btnAboutBack->setStyleSheet("QPushButton { margin-top: 40px; background-color: #808080; color: white; font-size: 18px; }");
     ui->btnConfirmAddTime->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
 
-    ui->editCapacity->setStyleSheet("font-size: 20px; padding: 8px 12px; border: 1px solid #bbb; border-radius: 5px;");
-    ui->editPrice->setStyleSheet("font-size: 20px; padding: 8px 12px; border: 1px solid #bbb; border-radius: 5px;");
+    ui->spinAddHour->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinAddMinute->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinAddSecond->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinSetPrice->setButtonSymbols(QAbstractSpinBox::NoButtons);
+
+    this->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
+
+    ui->btnSetPrice->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
 }
 
 MainWindow::~MainWindow() {
@@ -231,6 +239,7 @@ MainWindow::~MainWindow() {
  * 点击"创建停车场"按钮：切换到创建停车场页面
  */
 void MainWindow::on_btnCreatePark_clicked() {
+    ui->editParkName->clear();
     ui->editCapacity->clear();
     ui->editPrice->clear();
     ui->stackedWidget->setCurrentIndex(1);
@@ -248,6 +257,44 @@ void MainWindow::on_btnAbout_clicked() {
  */
 void MainWindow::on_btnExit_clicked() {
     this->close();
+}
+
+/*
+ * 点击"导入停车场"按钮：选择 JSON 文件并导入
+ */
+void MainWindow::on_btnImportPark_clicked() {
+    QString filePath = QFileDialog::getOpenFileName(this, "导入停车场", "", "JSON Files (*.json)");
+    if (filePath.isEmpty()) return;
+
+    std::string name;
+    int capacity;
+    double unitPrice;
+    std::vector<ImportCarData> cars;
+
+    if (ParkingFileManager::importFromJson(filePath.toStdString(), name, capacity, unitPrice, cars)) {
+        if (park) delete park;
+        park = new ParkingStructure(capacity, unitPrice);
+        parkCreated = true;
+        parkName = name;
+
+        // 遍历导入车辆
+        for (const auto& carData : cars) {
+            Car car(carData.plate);
+            car.setExtraTime(carData.totalTime);
+            park->insertPark(car);
+        }
+
+        showSuccessDialog(this, "成功", QString("停车场导入成功！\n名称: %1\n容量: %2\n单价: %3 元/小时\n已导入 %4 辆车")
+            .arg(QString::fromStdString(name))
+            .arg(capacity)
+            .arg(unitPrice)
+            .arg((int)cars.size()));
+
+        refreshManagePage();
+        ui->stackedWidget->setCurrentIndex(3);
+    } else {
+        showSuccessDialog(this, "错误", "文件格式错误或无法读取！");
+    }
 }
 
 // ============ 创建停车场 ============
@@ -282,6 +329,8 @@ void MainWindow::on_btnCreateConfirm_clicked() {
     if (park) delete park;
     park = new ParkingStructure(capacity, price);
     parkCreated = true;
+    parkName = ui->editParkName->text().trimmed().toStdString();
+    if (parkName.empty()) parkName = "我的停车场";
 
     {
         showSuccessDialog(this, "成功", "停车场创建成功！\n容量: " + QString::number(capacity) + "\n单价: " + QString::number(price) + " 元/小时");
@@ -307,13 +356,16 @@ void MainWindow::on_btnAboutBack_clicked() {
 // ============ 管理页面 ============
 
 /*
- * 刷新管理页面：更新栈内车辆和便道车辆列表显示
+ * 刷新管理页面：更新栈内车辆、便道车辆列表和停车场名称
  */
 void MainWindow::refreshManagePage() {
     if (!park) return;
 
     ui->listStack->clear();
     ui->listWaiting->clear();
+
+    // 更新停车场名称显示
+    ui->labelParkNameDisplay->setText(QString::fromStdString(parkName));
 
     // 刷新栈内车辆列表
     ParkingDualStackInterface& stackMsg = park->getStackMessage();
@@ -402,6 +454,25 @@ void MainWindow::on_btnCarInfo_clicked() {
     ui->stackedWidget->setCurrentIndex(4);
 }
 
+/*
+ * 点击"导出信息"按钮：将停车场数据导出为 JSON 文件
+ */
+void MainWindow::on_btnExportInfo_clicked() {
+    if (!park) {
+        showSuccessDialog(this, "错误", "请先创建停车场！");
+        return;
+    }
+
+    QString filePath = QFileDialog::getSaveFileName(this, "导出信息", "", "JSON Files (*.json)");
+    if (filePath.isEmpty()) return;
+
+    if (ParkingFileManager::exportToJson(filePath.toStdString(), *park, parkName)) {
+        showSuccessDialog(this, "成功", "停车场信息已导出！");
+    } else {
+        showSuccessDialog(this, "错误", "文件写入失败！");
+    }
+}
+
 // ============ 车辆信息页面 ============
 
 /*
@@ -426,6 +497,9 @@ void MainWindow::refreshCarInfoPage() {
         ui->tableCarInfo->setItem(i, 1, item1);
         ui->tableCarInfo->setItem(i, 2, item2);
     }
+
+    // 显示停车场名称
+    ui->labelParkNameFooter->setText(QString("停车场: %1").arg(QString::fromStdString(parkName)));
 }
 
 /*
@@ -466,4 +540,18 @@ void MainWindow::on_btnConfirmAddTime_clicked() {
         showSuccessDialog(this, "成功", QString("已增加 %1 时 %2 分 %3 秒").arg(hour).arg(minute).arg(second));
     }
     refreshCarInfoPage();
+}
+
+/*
+ * 点击"确认修改"按钮：修改单价
+ */
+void MainWindow::on_btnSetPrice_clicked() {
+    if (!park) {
+        showSuccessDialog(this, "错误", "请先创建停车场！");
+        return;
+    }
+
+    double newPrice = ui->spinSetPrice->value();
+    park->setUnitPrice(newPrice);
+    showSuccessDialog(this, "成功", QString("单价已修改为 %1 元/小时").arg(newPrice));
 }
