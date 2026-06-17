@@ -157,84 +157,115 @@
           </property>
          </spacer>
         </item>
-        <item>
-         <layout class="QHBoxLayout" name="layoutCapacity">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignmentFlag::AlignLeft">
-           <widget class="QLabel" name="labelCapacity">
-            <property name="font">
-             <font>
-              <pointsize>18</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>停车场容量：</string>
-            </property>
-           </widget>
+          <item>
+           <layout class="QHBoxLayout" name="layoutCreateInputs">
+            <item>
+             <spacer name="horizontalSpacerInputsLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="layoutLabels">
+              <property name="spacing">
+               <number>15</number>
+              </property>
+              <item alignment="Qt::AlignmentFlag::AlignLeft">
+               <widget class="QLabel" name="labelCapacity">
+                <property name="font">
+                 <font>
+                  <pointsize>18</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>停车场容量：</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignmentFlag::AlignLeft">
+               <widget class="QLabel" name="labelPrice">
+                <property name="font">
+                 <font>
+                  <pointsize>18</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>初始单价（元/小时）：</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+              <spacer name="horizontalSpacerBetweenLabelsInputs">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>4</width>
+                 <height>20</height>
+                </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="layoutInputs">
+              <property name="spacing">
+               <number>15</number>
+              </property>
+               <item alignment="Qt::AlignmentFlag::AlignRight">
+                <widget class="QLineEdit" name="editCapacity">
+                 <property name="minimumSize">
+                  <size>
+                   <width>500</width>
+                   <height>68</height>
+                  </size>
+                 </property>
+                 <property name="placeholderText">
+                  <string>请输入正整数</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignRight">
+                <widget class="QLineEdit" name="editPrice">
+                 <property name="minimumSize">
+                  <size>
+                   <width>500</width>
+                   <height>68</height>
+                  </size>
+                 </property>
+                 <property name="placeholderText">
+                  <string>请输入正数</string>
+                 </property>
+                </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerInputsRight">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
-          <item alignment="Qt::AlignmentFlag::AlignLeft">
-           <widget class="QLineEdit" name="editCapacity">
-            <property name="minimumSize">
-             <size>
-              <width>420</width>
-              <height>68</height>
-             </size>
-            </property>
-            <property name="placeholderText">
-             <string>请输入正整数</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="layoutPrice">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignmentFlag::AlignLeft">
-           <widget class="QLabel" name="labelPrice">
-            <property name="font">
-             <font>
-              <pointsize>18</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>初始单价（元/小时）：</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignmentFlag::AlignLeft">
-           <widget class="QLineEdit" name="editPrice">
-            <property name="minimumSize">
-             <size>
-              <width>420</width>
-              <height>68</height>
-             </size>
-            </property>
-            <property name="placeholderText">
-             <string>请输入正数</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacerCreateBtns">
+         <item>
+          <spacer name="verticalSpacerCreateBtns">
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>

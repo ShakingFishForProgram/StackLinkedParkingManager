@@ -12,22 +12,25 @@
 static void showSuccessDialog(QWidget* parent, const QString& title, const QString& text) {
     QDialog* dialog = new QDialog(parent);
     dialog->setWindowTitle(title);
-    dialog->setFixedSize(400, 56);
-    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 24px; }");
+    dialog->setMinimumSize(400, 90);
+    dialog->setMaximumSize(400, 90);
+    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 20px; }");
+    dialog->setSizeGripEnabled(false);
+    dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowMaximizeButtonHint | Qt::MSWindowsFixedSizeDialogHint);
 
     QVBoxLayout* layout = new QVBoxLayout(dialog);
-    layout->setContentsMargins(30, 30, 30, 30);
+    layout->setContentsMargins(10, 10, 10, 10);
 
     QLabel* label = new QLabel(text, dialog);
     label->setWordWrap(true);
     label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    label->setStyleSheet("font-size: 24px; font-family: 'YouYuan';");
+    label->setStyleSheet("font-size: 20px; font-family: 'YouYuan';");
     layout->addWidget(label);
 
     layout->addStretch();
 
     QPushButton* okBtn = new QPushButton("OK", dialog);
-    okBtn->setFixedSize(100, 40);
+    okBtn->setFixedSize(80, 32);
     okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
 
@@ -43,11 +46,13 @@ static void showSuccessDialog(QWidget* parent, const QString& title, const QStri
 static QString showInputDialog(QWidget* parent, const QString& title, const QString& label) {
     QDialog* dialog = new QDialog(parent);
     dialog->setWindowTitle(title);
-    dialog->setFixedSize(360, 200);
-    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 24px; }");
+    dialog->setFixedSize(300, 160);
+    dialog->setStyleSheet("QDialog { font-family: 'YouYuan'; font-size: 16px; }");
+    dialog->setSizeGripEnabled(false);
+    dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 
     QVBoxLayout* layout = new QVBoxLayout(dialog);
-    layout->setContentsMargins(30, 30, 30, 30);
+    layout->setContentsMargins(10, 10, 10, 10);
 
     QLabel* lbl = new QLabel(label, dialog);
     lbl->setStyleSheet("font-size: 20px; font-family: 'YouYuan';");
@@ -56,7 +61,7 @@ static QString showInputDialog(QWidget* parent, const QString& title, const QStr
     layout->addSpacing(10);
 
     QLineEdit* edit = new QLineEdit(dialog);
-    edit->setMinimumHeight(50);
+    edit->setMinimumHeight(40);
     edit->setStyleSheet("font-size: 20px; padding: 8px; border: 1px solid #bbb; border-radius: 5px;");
     layout->addWidget(edit);
 
@@ -66,12 +71,12 @@ static QString showInputDialog(QWidget* parent, const QString& title, const QStr
     btnLayout->addStretch();
 
     QPushButton* okBtn = new QPushButton("OK", dialog);
-    okBtn->setFixedSize(100, 40);
+    okBtn->setFixedSize(100, 32);
     okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
 
     QPushButton* cancelBtn = new QPushButton("Cancel", dialog);
-    cancelBtn->setFixedSize(100, 40);
+    cancelBtn->setFixedSize(100, 32);
     cancelBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(cancelBtn, &QPushButton::clicked, dialog, &QDialog::reject);
 
