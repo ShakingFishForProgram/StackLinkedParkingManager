@@ -11,6 +11,13 @@ qt_add_executable(StackLinkedParkingManager
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
+    include/Car.h
+    include/DoublyLinkedList.h
+    include/DualStack.h
+    include/ParkingDoublyLinkedList.h
+    include/ParkingDualStack.h
+    include/ParkingInterfaces.h
+    include/ParkingStructure.h
 )
 
 qt_add_translations(
