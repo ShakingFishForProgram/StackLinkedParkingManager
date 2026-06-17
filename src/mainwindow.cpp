@@ -223,8 +223,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spinAddSecond->setButtonSymbols(QAbstractSpinBox::NoButtons);
     ui->spinSetPrice->setButtonSymbols(QAbstractSpinBox::NoButtons);
 
-    this->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
-
     ui->btnSetPrice->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
 }
 
