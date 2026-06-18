@@ -8,13 +8,29 @@
 #include "ParkingStructure.h"
 #include "ParkingInterfaces.h"
 
+// 导入车辆数据结构体
+// 存储从 JSON 中解析出的车牌号和总时间
 struct ImportCarData {
-    std::string plate;
-    time_t totalTime;
+    std::string plate;       // 车牌号
+    time_t totalTime;        // 导入时恢复的历史总时间（秒）
 };
 
+// 停车场文件管理类
+// 提供静态方法，支持 JSON 格式的导入和导出
+// JSON 格式：
+// {
+//     "parkName": "...",
+//     "capacity": 5,
+//     "unitPrice": 2.0,
+//     "cars": [
+//         { "plate": "京A001", "totalTime": 3600 },
+//         { "plate": "京A002", "totalTime": 0 }
+//     ]
+// }
 class ParkingFileManager {
 public:
+    // 导出停车场数据到 JSON 文件
+    // 包含：名称、容量、单价、栈内车辆（含总时间）、便道车辆（时间计 0）
     static bool exportToJson(const std::string& filePath, ParkingStructure& park, const std::string& parkName) {
         std::ofstream file(filePath);
         if (!file.is_open()) return false;
@@ -30,6 +46,7 @@ public:
 
         bool first = true;
 
+        // 写入栈内车辆
         for (int i = 0; i < stackMsg.size; i++) {
             if (!first) file << ",\n";
             file << "        {\n";
@@ -39,6 +56,7 @@ public:
             first = false;
         }
 
+        // 写入便道车辆
         for (int i = 0; i < listMsg.size; i++) {
             if (!first) file << ",\n";
             file << "        {\n";
@@ -55,6 +73,8 @@ public:
         return true;
     }
 
+    // 从 JSON 文件导入停车场数据
+    // 解析后通过输出参数返回名称、容量、单价和车辆列表
     static bool importFromJson(const std::string& filePath, std::string& parkName,
                                int& capacity, double& unitPrice,
                                std::vector<ImportCarData>& cars) {
@@ -67,7 +87,7 @@ public:
         while (std::getline(file, line)) {
             size_t pos;
 
-            // 查找 parkName
+            // 解析 parkName
             pos = line.find("\"parkName\"");
             if (pos != std::string::npos) {
                 size_t start = line.find("\"", pos + 10);
@@ -78,7 +98,7 @@ public:
                 }
             }
 
-            // 查找 capacity
+            // 解析 capacity
             pos = line.find("\"capacity\"");
             if (pos != std::string::npos) {
                 size_t colon = line.find(":", pos + 9);
@@ -89,7 +109,7 @@ public:
                 }
             }
 
-            // 查找 unitPrice
+            // 解析 unitPrice
             pos = line.find("\"unitPrice\"");
             if (pos != std::string::npos) {
                 size_t colon = line.find(":", pos + 10);
@@ -100,7 +120,7 @@ public:
                 }
             }
 
-            // 查找 cars 数组中的 plate 和 totalTime
+            // 解析 cars 数组中的 plate 和 totalTime
             pos = line.find("\"plate\"");
             if (pos != std::string::npos) {
                 size_t start = line.find("\"", pos + 7);
@@ -109,7 +129,7 @@ public:
                     ImportCarData carData;
                     carData.plate = line.substr(start + 1, end - start - 1);
 
-                    // 读取同一对象中的 totalTime（在下一行或同一行）
+                    // 读取下一行的 totalTime
                     if (std::getline(file, line)) {
                         size_t tpos = line.find("\"totalTime\"");
                         if (tpos != std::string::npos) {
@@ -126,6 +146,7 @@ public:
 
         file.close();
 
+        // 未找到字段时设置默认值
         if (!foundName) parkName = "我的停车场";
         if (!foundCapacity) capacity = 5;
         if (!foundPrice) unitPrice = 1.0;
