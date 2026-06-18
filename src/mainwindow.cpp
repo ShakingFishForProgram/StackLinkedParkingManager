@@ -227,6 +227,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->spinSetPrice->setButtonSymbols(QAbstractSpinBox::NoButtons);
 
     ui->btnSetPrice->setStyleSheet("QPushButton { background-color: #808080; color: white; font-size: 18px; }");
+
+    ui->btnCarInfoBack->setStyleSheet("QPushButton { background-color: #D0D0D0; color: white; font-size: 11px; border-radius: 0px; }");
+
+    refreshTimer = new QTimer(this);
+    connect(refreshTimer, &QTimer::timeout, this, &MainWindow::refreshCarInfoPage);
 }
 
 MainWindow::~MainWindow() {
@@ -451,7 +456,12 @@ void MainWindow::on_btnCarInfo_clicked() {
         msgBox.exec();
         return;
     }
+    ui->spinAddHour->setValue(0);
+    ui->spinAddMinute->setValue(0);
+    ui->spinAddSecond->setValue(0);
+    ui->spinSetPrice->setValue(park->getUnitPrice());
     refreshCarInfoPage();
+    refreshTimer->start(1000);
     ui->stackedWidget->setCurrentIndex(4);
 }
 
@@ -512,25 +522,14 @@ void MainWindow::refreshCarInfoPage() {
 
     // 显示停车场名称
     ui->labelParkNameFooter->setText(QString("停车场: %1").arg(QString::fromStdString(parkName)));
-
-    ui->spinAddHour->setValue(0);
-    ui->spinAddMinute->setValue(0);
-    ui->spinAddSecond->setValue(0);
-    ui->spinSetPrice->setValue(1.00);
 }
 
 /*
  * 点击"返回管理"按钮：回到管理页面
  */
 void MainWindow::on_btnCarInfoBack_clicked() {
+    refreshTimer->stop();
     ui->stackedWidget->setCurrentIndex(3);
-}
-
-/*
- * 点击"刷新"按钮：重新加载车辆信息表格数据
- */
-void MainWindow::on_btnRefreshCarInfo_clicked() {
-    refreshCarInfoPage();
 }
 
 /*
@@ -575,5 +574,5 @@ void MainWindow::on_btnSetPrice_clicked() {
     park->setUnitPrice(newPrice);
     showSuccessDialog(this, "成功", QString("单价已修改为 %1 元/小时").arg(newPrice));
     refreshCarInfoPage();
-    ui->spinSetPrice->setValue(1.00);
+    ui->spinSetPrice->setValue(park->getUnitPrice());
 }

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include <string>
 #include "ParkingStructure.h"
 
@@ -36,13 +37,14 @@ private slots:
     void on_btnExportInfo_clicked();
 
     void on_btnCarInfoBack_clicked();
-    void on_btnRefreshCarInfo_clicked();
     void on_btnConfirmAddTime_clicked();
     void on_btnSetPrice_clicked();
 
 private:
     void refreshManagePage();
     void refreshCarInfoPage();
+
+    QTimer* refreshTimer;
 
     Ui::MainWindow *ui;
     ParkingStructure *park;
