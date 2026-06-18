@@ -169,6 +169,9 @@ MainWindow::MainWindow(QWidget *parent)
         "  background-color: #E0E0E0;"
         "  color: black;"
         "}"
+        "QTableWidget::item:hover {"
+        "  background-color: #D0D0D0;"
+        "}"
         "QListWidget {"
         "  font-size: 36px;"
         "}"
@@ -487,7 +490,18 @@ void MainWindow::refreshCarInfoPage() {
     for (int i = 0; i < msg.size; i++) {
         QTableWidgetItem* item0 = new QTableWidgetItem(QString::fromStdString(msg.container[i].id));
         item0->setTextAlignment(Qt::AlignCenter);
-        QTableWidgetItem* item1 = new QTableWidgetItem(QString::number(msg.container[i].totalTime) + "s");
+        int totalSec = msg.container[i].totalTime;
+        int hours = totalSec / 3600;
+        int mins = (totalSec % 3600) / 60;
+        int secs = totalSec % 60;
+        QString timeStr;
+        if (hours > 0)
+            timeStr = QString("%1时%2分%3秒").arg(hours).arg(mins).arg(secs);
+        else if (mins > 0)
+            timeStr = QString("%1分%2秒").arg(mins).arg(secs);
+        else
+            timeStr = QString("%1秒").arg(secs);
+        QTableWidgetItem* item1 = new QTableWidgetItem(timeStr);
         item1->setTextAlignment(Qt::AlignCenter);
         QTableWidgetItem* item2 = new QTableWidgetItem(QString::number(msg.container[i].price, 'f', 2) + "元");
         item2->setTextAlignment(Qt::AlignCenter);
@@ -498,6 +512,11 @@ void MainWindow::refreshCarInfoPage() {
 
     // 显示停车场名称
     ui->labelParkNameFooter->setText(QString("停车场: %1").arg(QString::fromStdString(parkName)));
+
+    ui->spinAddHour->setValue(0);
+    ui->spinAddMinute->setValue(0);
+    ui->spinAddSecond->setValue(0);
+    ui->spinSetPrice->setValue(1.00);
 }
 
 /*
@@ -538,6 +557,9 @@ void MainWindow::on_btnConfirmAddTime_clicked() {
         showSuccessDialog(this, "成功", QString("已增加 %1 时 %2 分 %3 秒").arg(hour).arg(minute).arg(second));
     }
     refreshCarInfoPage();
+    ui->spinAddHour->setValue(0);
+    ui->spinAddMinute->setValue(0);
+    ui->spinAddSecond->setValue(0);
 }
 
 /*
@@ -552,4 +574,6 @@ void MainWindow::on_btnSetPrice_clicked() {
     double newPrice = ui->spinSetPrice->value();
     park->setUnitPrice(newPrice);
     showSuccessDialog(this, "成功", QString("单价已修改为 %1 元/小时").arg(newPrice));
+    refreshCarInfoPage();
+    ui->spinSetPrice->setValue(1.00);
 }
