@@ -40,9 +40,9 @@ static void showSuccessDialog(QWidget* parent, const QString& title, const QStri
 
     layout->addStretch();                                       // 弹性空间，将按钮推到底部
 
-    QPushButton* okBtn = new QPushButton("OK", dialog);         // 灰色确认按钮
+    QPushButton* okBtn = new QPushButton("是", dialog);         // 灰色确认按钮
     okBtn->setFixedSize(80, 32);
-    okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    okBtn->setStyleSheet("QPushButton { font-size: 12px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
 
     QHBoxLayout* btnLayout = new QHBoxLayout();                 // 按钮水平居中
@@ -88,14 +88,14 @@ static QString showInputDialog(QWidget* parent, const QString& title, const QStr
     QHBoxLayout* btnLayout = new QHBoxLayout();                 // 按钮水平布局
     btnLayout->addStretch();
 
-    QPushButton* okBtn = new QPushButton("OK", dialog);         // 确认按钮
+    QPushButton* okBtn = new QPushButton("是", dialog);         // 确认按钮
     okBtn->setFixedSize(100, 32);
-    okBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    okBtn->setStyleSheet("QPushButton { font-size: 12px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(okBtn, &QPushButton::clicked, dialog, &QDialog::accept);
 
-    QPushButton* cancelBtn = new QPushButton("Cancel", dialog); // 取消按钮
+    QPushButton* cancelBtn = new QPushButton("取消", dialog); // 取消按钮
     cancelBtn->setFixedSize(100, 32);
-    cancelBtn->setStyleSheet("QPushButton { font-size: 16px; background-color: #808080; color: white; border-radius: 6px; }");
+    cancelBtn->setStyleSheet("QPushButton { font-size: 12px; background-color: #808080; color: white; border-radius: 6px; }");
     QObject::connect(cancelBtn, &QPushButton::clicked, dialog, &QDialog::reject);
 
     btnLayout->addWidget(okBtn);
@@ -146,7 +146,7 @@ MainWindow::MainWindow(QWidget *parent)
         "QPushButton:pressed {"                                 // 按下变更深灰
         "  background-color: #5A5A5A;"
         "}"
-        "QLineEdit, QSpinBox {"                                 // 输入框样式
+        "QLineEdit, QSpinBox, QDoubleSpinBox {"                         // 输入框样式
         "  font-size: 18px;"
         "  padding: 8px 12px;"
         "  border: 1px solid #bbb;"
@@ -435,10 +435,21 @@ void MainWindow::on_btnRemoveCar_clicked() {
     if (park->leavePark(plate.toStdString(), leftCar)) {        // 执行离场
         time_t parkingTime = leftCar.getPakingTime();           // 获取停车时间
         double fee = parkingTime * park->getUnitPrice() / 3600.0;  // 计算费用
+        // 格式化时间显示：<1分钟显示秒，<1小时显示分秒，≥1小时显示时分秒
+        int pHours = parkingTime / 3600;
+        int pMins = (parkingTime % 3600) / 60;
+        int pSecs = parkingTime % 60;
+        QString pTimeStr;
+        if (pHours > 0)
+            pTimeStr = QString("%1时%2分%3秒").arg(pHours).arg(pMins).arg(pSecs);
+        else if (pMins > 0)
+            pTimeStr = QString("%1分%2秒").arg(pMins).arg(pSecs);
+        else
+            pTimeStr = QString("%1秒").arg(pSecs);
         {
-            showSuccessDialog(this, "车辆离场", QString("车辆 %1 已离场\n停车时间: %2 秒\n费用: %3 元")
+            showSuccessDialog(this, "车辆离场", QString("车辆 %1 已离场\n停车时间: %2\n费用: %3 元")
                                                         .arg(QString::fromStdString(leftCar.getId()))
-                                                        .arg(parkingTime)
+                                                        .arg(pTimeStr)
                                                         .arg(fee, 0, 'f', 2));
         }
         refreshManagePage();                                    // 刷新管理页面

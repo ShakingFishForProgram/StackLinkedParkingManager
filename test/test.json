@@ -1,0 +1,31 @@
+{
+    "parkName": "测试停车场",
+    "capacity": 5,
+    "unitPrice": 3,
+    "cars": [
+        {
+            "plate": "鲁C001",
+            "totalTime": 4276
+        },
+        {
+            "plate": "鲁C004",
+            "totalTime": 4253
+        },
+        {
+            "plate": "鲁C005",
+            "totalTime": 4250
+        },
+        {
+            "plate": "鲁C006",
+            "totalTime": 4210
+        },
+        {
+            "plate": "鲁C007",
+            "totalTime": 448
+        },
+        {
+            "plate": "鲁C009",
+            "totalTime": 0
+        }
+    ]
+}
