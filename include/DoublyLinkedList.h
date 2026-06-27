@@ -29,6 +29,7 @@ template <typename T>
 class DoublyLinkedList {
     protected:
         Node<T>* firstNode;  // 头节点指针（第一个节点）
+        Node<T>* lastNode; // 尾节点指针
         int size;            // 链表当前大小
 
         // 检查索引是否有效（0 ≤ index < size）
@@ -40,6 +41,7 @@ class DoublyLinkedList {
         // 构造函数：创建空链表
         DoublyLinkedList() {
             this->firstNode = nullptr;
+            this->lastNode = nullptr;
             this->size = 0;
         }
 
@@ -62,6 +64,7 @@ class DoublyLinkedList {
                 prevThisNode = currentThisNode;
                 currentOtherObjNode = currentOtherObjNode->next;
             }
+            this->lastNode = prevThisNode;
 
             this->size = otherObj.size;
 
@@ -105,6 +108,7 @@ class DoublyLinkedList {
                 prevThisNode = currentThisNode;
                 currentOtherObjNode = currentOtherObjNode->next;
             }
+            this->lastNode = prevThisNode;
 
             this->size = otherObj.size;
 
@@ -142,13 +146,23 @@ class DoublyLinkedList {
             if(!this->checkIndex(index)) {
                 return false;
             }
-            int currentIndex = 0;
-            Node<T>* currentNode = this->firstNode;
-            while (currentIndex < index) {
-                currentNode = currentNode->next;
-                currentIndex ++;
+            if(index < this->size / 2) {
+                int currentIndex = 0;
+                Node<T>* currentNode = this->firstNode;
+                while (currentIndex < index) {
+                    currentNode = currentNode->next;
+                    currentIndex ++;
+                }
+                element = currentNode->value;
+            } else {
+                int currentIndex = this->size-1;
+                Node<T>* currentNode = this->lastNode;
+                while (currentIndex > index) {
+                    currentNode = currentNode->prev;
+                    currentIndex --;
+                }
+                element = currentNode->value;
             }
-            element = currentNode->value;
             return true;
         }
 
@@ -177,25 +191,44 @@ class DoublyLinkedList {
                 return false;
             }
 
-            if (index == 0) {
+            if (this->size == 1) {
+                Node<T>* targetNode = this->firstNode;
+                this->firstNode = nullptr;
+                this->lastNode = nullptr;
+
+                delete targetNode;
+            } else if (index == 0) {
                 // 删除头节点
                 Node<T>* targetNode = this->firstNode;
                 this->firstNode = this->firstNode->next;
-                if(this->firstNode != nullptr) {
-                    this->firstNode->prev = nullptr;
-                }
+                this->firstNode->prev = nullptr;
+                delete targetNode;
+            } else if (index == this->size-1) {
+                // 删除尾节点
+                Node<T>* targetNode = this->lastNode;
+                this->lastNode = this->lastNode->prev;
+                this->lastNode->next = nullptr;
                 delete targetNode;
             } else {
-                // 遍历到目标节点
+                // 删除中间节点（该节点一定有前驱节点和后继结点）
                 Node<T>* currentNode = this->firstNode;
                 int currentIndex = 0;
-                while (currentIndex < index) {
-                    currentNode = currentNode->next;
-                    currentIndex ++;
+
+                if (index < this->size/2) {
+                    while (currentIndex < index) {
+                        currentNode = currentNode->next;
+                        currentIndex ++;
+                    }
+                } else {
+                    currentNode = this->lastNode;
+                    currentIndex = this->size-1;
+                    while (currentIndex > index) {
+                        currentNode = currentNode->prev;
+                        currentIndex --;
+                    }
                 }
 
                 Node<T>* targetNode = currentNode;
-
                 Node<T>* prevNode = targetNode->prev;
                 Node<T>* nextNode = targetNode->next;
 
@@ -222,44 +255,55 @@ class DoublyLinkedList {
 
             Node<T>* newNode = new Node<T>(element);
 
-            if(index == 0) {
-                // 插入到头部
-                newNode->next = this->firstNode;
+            if (this->isEmpty()) {
                 this->firstNode = newNode;
-                if(this->firstNode->next != nullptr) {
-                    this->firstNode->next->prev = this->firstNode;
-                }
+                this->lastNode = newNode;
+            } else if(index == 0) {
+                // 节点在头部插入
+                newNode->next = this->firstNode;
+                this->firstNode->prev = newNode;
+                this->firstNode = newNode;
+            } else if(index == size) {
+                // 节点在尾部插入
+                newNode->prev = this->lastNode;
+                this->lastNode->next = newNode;
+                this->lastNode = newNode;
             } else {
-                // 遍历到插入位置的前一个节点
+                // 节点在中间插入（插入该节点之前index位置有节点且该节点一定有前驱节点）
                 Node<T>* currentNode = this->firstNode;
                 int currentIndex = 0;
-                while (currentIndex < index-1) {
-                    currentNode = currentNode->next;
-                    currentIndex ++;
+
+                if (index < this->size / 2) {
+                    while (currentIndex < index) {
+                        currentNode = currentNode->next;
+                        currentIndex ++;
+                    }
+                } else {
+                    currentNode = this->lastNode;
+                    int currentIndex = this->size-1;
+                    while (currentIndex > index) {
+                        currentNode = currentNode->prev;
+                        currentIndex --;
+                    }
                 }
 
-                Node<T>* prevNode = currentNode;
-                Node<T>* nextNode = prevNode->next;
-
-                if(prevNode != nullptr) {
-                    prevNode->next = newNode;
-                }
-
+                Node<T>* nextNode = currentNode;
+                Node<T>* prevNode = nextNode->prev;
                 newNode->next = nextNode;
                 newNode->prev = prevNode;
+                prevNode->next = newNode;
+                nextNode->prev = newNode;
 
-                if(nextNode != nullptr) {
-                    nextNode->prev = newNode;
-                }
+
             }
 
-            size ++;
+            this->size ++;
             return true;
         }
 
         // 追加元素到链表末尾
         bool push(const T& element) {
-            return (this->insert(this->size, element));
+            return this->insert(this->size, element);
         }
 
         // 显示链表所有元素
